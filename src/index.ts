@@ -6,7 +6,7 @@ const btns = [
   {
     icon: "./assets/icons/console.png",
     text: "Shell Version",
-    position: "top-left",
+    position: "col-span-12",
     onclick: () => {
       window.open("https://jpldcarvalho.sh", "_blank")?.focus();
     },
@@ -14,7 +14,7 @@ const btns = [
   {
     icon: "./assets/icons/opened-folder.gif",
     text: "Documents",
-    position: "top-left",
+    position: "col-span-12",
     onclick: () => {
       openFileManager();
     },
@@ -22,7 +22,7 @@ const btns = [
   {
     icon: "./assets/icons/contacts.svg",
     text: "Contacts",
-    position: "top-left",
+    position: "col-span-12 row-span-3 align-top items-start",
     onclick: () => {
       openContacts();
     },
@@ -30,7 +30,7 @@ const btns = [
   {
     icon: "./assets/icons/github.svg",
     text: "GitHub",
-    position: "bottom-left",
+    position: "col-span-1",
     onclick: () => {
       window.open("https://github.com/jpldcarvalho", "_blank")?.focus();
     },
@@ -38,7 +38,7 @@ const btns = [
   {
     icon: "./assets/icons/twitter.gif",
     text: "Twitter",
-    position: "bottom-left",
+    position: "col-span-1",
     onclick: () => {
       window.open("https://twitter.com/jpldcarvalho", "_blank")?.focus();
     },
@@ -46,7 +46,7 @@ const btns = [
   {
     icon: "./assets/icons/linkedin.gif",
     text: "LinkedIn",
-    position: "bottom-left",
+    position: "col-span-1",
     onclick: () => {
       window.open("https://linkedin.com/in/jpldcarvalho", "_blank")?.focus();
     },
@@ -54,7 +54,7 @@ const btns = [
   {
     icon: "./assets/icons/youtube.svg",
     text: "YouTube",
-    position: "bottom-left",
+    position: "col-span-8",
     onclick: () => {
       window
         .open(
@@ -67,7 +67,7 @@ const btns = [
   {
     icon: "./assets/icons/info.gif",
     text: "Info",
-    position: "bottom-right",
+    position: "row-span-1",
     onclick: () => {
       openInfo();
     },
@@ -76,22 +76,19 @@ const btns = [
 
 const render = () => {
   const canvas = <HTMLSpanElement>document.getElementById("canvas");
-  let positions: any = {};
+  canvas.className = "h-screen py-5 px-10 grid grid-cols-12 gap-4";
   for (const btn of btns) {
+    const divEl = document.createElement("div");
     const btnEl = document.createElement("button");
-    btnEl.innerHTML = `<img src="${btn.icon}"><span class="caption">${btn.text}</span>`;
-    btnEl.classList.add("btn");
+    btnEl.innerHTML = `
+    <img src="${btn.icon}" class="mx-auto">
+    <span class="caption">${btn.text}</span>`;
+    //btnEl.classList.add("btn");
+    divEl.className = btn.position;
+    btnEl.className = "align-middle";
     btnEl.onclick = btn.onclick;
-    if (!positions[btn.position]) positions[btn.position] = [];
-    positions[btn.position].push(btnEl);
-  }
-  for (const k in positions) {
-    const wrapper = document.createElement("div");
-    wrapper.classList.add(k);
-    for (const btn of positions[k]) {
-      wrapper.appendChild(btn);
-    }
-    canvas.appendChild(wrapper);
+    divEl.appendChild(btnEl);
+    canvas.appendChild(divEl);
   }
 };
 

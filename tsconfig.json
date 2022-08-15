@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "ESNEXT",
-    "rootDir": "./",
+    "rootDir": "./src",
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
