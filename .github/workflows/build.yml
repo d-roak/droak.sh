@@ -1,4 +1,4 @@
-name: Build
+name: Build and deploy
 on: push
 jobs:
   build:
@@ -11,3 +11,8 @@ jobs:
           node-version: 12.13
       - run: npm install
       - run: npm run build
+  deploy:
+    uses: peaceiris/actions-gh-pages@v3
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: ./public
