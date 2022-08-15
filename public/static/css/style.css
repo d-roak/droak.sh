@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "dynapuff";
+  src: url("../../assets/fonts/dynapuff.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("../../assets/background.jpg");
+  margin: 2rem;
+}
+
+img {
+  width: 64px;
+  height: 64px;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  text-decoration: bold;
+}
+
+.caption {
+  display: block;
+  width: 90px;
+  margin-top: 0.5rem;
+  font-family: dynapuff;
+  color: #7f808b;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.top-left {
+  display: inline-grid;
+  text-align: center;
+}
+
+.bottom-left {
+  display: inline;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f7ecde;
+  border: 2px solid #91949b;
+  border-radius: 20px;
+}
+
+.window-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5rem;
+  background-color: #89aed8;
+  border-bottom: 2px solid #91949b;
+  border-radius: 19px 19px 0 0;
+}
+
+.window-maximize {
+  background-color: #88d7b6;
+  border-radius: 50%;
+  border: 1px solid #7776a9;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  right: 38px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.window-maximize img {
+  width: 0.7rem;
+  height: 0.7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.window-close {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #7776a9;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.window-close img {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.window-content {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 1.5rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #f7ecde;
+  border-radius: 0 0 19px 19px;
+  font-family: dynapuff;
+  color: #7f808b;
+}
+
+.info {
+  padding: 1rem;
+}
+
+.info p {
+  margin-top: 2rem;
+}
+
+.info a {
+  color: #89aed8;
+  text-decoration: underline;
+}
