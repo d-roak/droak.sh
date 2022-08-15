@@ -6,7 +6,7 @@ const btns = [
   {
     icon: "./assets/icons/console.png",
     text: "Shell Version",
-    position: "col-span-12",
+    position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
       window.open("https://jpldcarvalho.sh", "_blank")?.focus();
     },
@@ -14,7 +14,7 @@ const btns = [
   {
     icon: "./assets/icons/opened-folder.gif",
     text: "Documents",
-    position: "col-span-12",
+    position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
       openFileManager();
     },
@@ -22,7 +22,7 @@ const btns = [
   {
     icon: "./assets/icons/contacts.svg",
     text: "Contacts",
-    position: "col-span-12 row-span-3 align-top items-start",
+    position: "md:col-span-6 lg:col-span-12 md:row-span-3 align-top items-start",
     onclick: () => {
       openContacts();
     },
@@ -30,7 +30,7 @@ const btns = [
   {
     icon: "./assets/icons/github.svg",
     text: "GitHub",
-    position: "col-span-1",
+    position: "",
     onclick: () => {
       window.open("https://github.com/jpldcarvalho", "_blank")?.focus();
     },
@@ -38,7 +38,7 @@ const btns = [
   {
     icon: "./assets/icons/twitter.gif",
     text: "Twitter",
-    position: "col-span-1",
+    position: "",
     onclick: () => {
       window.open("https://twitter.com/jpldcarvalho", "_blank")?.focus();
     },
@@ -46,7 +46,7 @@ const btns = [
   {
     icon: "./assets/icons/linkedin.gif",
     text: "LinkedIn",
-    position: "col-span-1",
+    position: "",
     onclick: () => {
       window.open("https://linkedin.com/in/jpldcarvalho", "_blank")?.focus();
     },
@@ -54,7 +54,7 @@ const btns = [
   {
     icon: "./assets/icons/youtube.svg",
     text: "YouTube",
-    position: "col-span-8",
+    position: "md:col-span-2 lg:col-span-8",
     onclick: () => {
       window
         .open(
@@ -67,7 +67,7 @@ const btns = [
   {
     icon: "./assets/icons/info.gif",
     text: "Info",
-    position: "row-span-1",
+    position: "",
     onclick: () => {
       openInfo();
     },
@@ -76,7 +76,7 @@ const btns = [
 
 const render = () => {
   const canvas = <HTMLSpanElement>document.getElementById("canvas");
-  canvas.className = "h-screen py-5 px-10 grid grid-cols-12 gap-4";
+  canvas.className = "h-screen py-5 px-10 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4";
   for (const btn of btns) {
     const divEl = document.createElement("div");
     const btnEl = document.createElement("button");
