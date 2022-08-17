@@ -32,6 +32,7 @@ const btns = [
     text: "GitHub",
     position: "",
     onclick: () => {
+      //openBrowser("https://github.com/jpldcarvalho");
       window.open("https://github.com/jpldcarvalho", "_blank")?.focus();
     },
   },
@@ -41,6 +42,7 @@ const btns = [
     position: "",
     onclick: () => {
       window.open("https://twitter.com/jpldcarvalho", "_blank")?.focus();
+      //openBrowser("https://twitter.com/jpldcarvalho");
     },
   },
   {
@@ -49,6 +51,7 @@ const btns = [
     position: "",
     onclick: () => {
       window.open("https://linkedin.com/in/jpldcarvalho", "_blank")?.focus();
+      //openBrowser("https://linkedin.com/in/jpldcarvalho");
     },
   },
   {
@@ -62,6 +65,7 @@ const btns = [
           "_blank"
         )
         ?.focus();
+      //openBrowser("https://www.youtube.com/channel/UC0vboDaMi68l2c-lAkiPAzw");
     },
   },
   {
