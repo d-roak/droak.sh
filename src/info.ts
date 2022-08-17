@@ -3,7 +3,6 @@ import { baseWindow } from "./base-window";
 export const openInfo = () => {
   const content = document.createElement("div");
   content.classList.add("info");
-  content.className = "ml-2";
   content.innerHTML = `
     <h1 class="font-semibold text-2xl">Info</h1>
     <p>
@@ -14,5 +13,5 @@ export const openInfo = () => {
     </p>
   `;
 
-  baseWindow("400px", "500px", content);
+  baseWindow("w-96 h-96", content);
 };

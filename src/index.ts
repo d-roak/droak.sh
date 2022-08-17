@@ -76,7 +76,9 @@ const btns = [
 
 const render = () => {
   const canvas = <HTMLSpanElement>document.getElementById("canvas");
-  canvas.className = "h-screen py-5 px-10 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4";
+  const base = document.createElement("div");
+  canvas.appendChild(base);
+  base.className = "h-screen py-5 px-10 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4";
   for (const btn of btns) {
     const divEl = document.createElement("div");
     const btnEl = document.createElement("button");
@@ -88,7 +90,7 @@ const render = () => {
     btnEl.className = "align-middle";
     btnEl.onclick = btn.onclick;
     divEl.appendChild(btnEl);
-    canvas.appendChild(divEl);
+    base.appendChild(divEl);
   }
 };
 
