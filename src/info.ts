@@ -4,8 +4,6 @@ export const openInfo = () => {
   if (<HTMLSpanElement>document.getElementById("info")) return;
   const content = document.createElement("div");
   content.id = "info";
-
-  content.classList.add("info");
   content.className = "p-4";
   content.innerHTML = `
     <h1 class="font-semibold text-2xl">Info</h1>

@@ -1,4 +1,4 @@
-import { openFileManager } from "./filemanager";
+import { openDocuments } from "./documents";
 import { openContacts } from "./contacts";
 import { openInfo } from "./info";
 
@@ -16,7 +16,7 @@ const btns = [
     text: "Documents",
     position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
-      openFileManager();
+      openDocuments();
     },
   },
   {
@@ -86,7 +86,7 @@ const render = () => {
     <img src="${btn.icon}" class="mx-auto w-16 h-16">
     <span class="block w-24 mt-2 text-base font-['dynapuff'] text-pastel-dark-grey font-medium">${btn.text}</span>`;
     divEl.className = btn.position;
-    btnEl.className = "align-middle";
+    btnEl.className = "align-middle focus-visible:outline-none";
     btnEl.onclick = btn.onclick;
     divEl.appendChild(btnEl);
     base.appendChild(divEl);
