@@ -83,9 +83,8 @@ const render = () => {
     const divEl = document.createElement("div");
     const btnEl = document.createElement("button");
     btnEl.innerHTML = `
-    <img src="${btn.icon}" class="mx-auto">
-    <span class="caption">${btn.text}</span>`;
-    //btnEl.classList.add("btn");
+    <img src="${btn.icon}" class="mx-auto w-16 h-16">
+    <span class="block w-24 mt-2 text-base font-['dynapuff'] text-pastel-dark-grey font-medium">${btn.text}</span>`;
     divEl.className = btn.position;
     btnEl.className = "align-middle";
     btnEl.onclick = btn.onclick;
