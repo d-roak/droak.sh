@@ -6,8 +6,8 @@ export const openDocuments = () => {
   content.id = "documents";
   content.className = "p-4";
   content.innerHTML = `
-    <h1 class="font-semibold text-2xl">Coming soon!</h1>
+    <h1 class="font-semibold text-2xl">Coming Soon!</h1>
   `;
 
-  baseWindow("w-72 h-28 md:w-72 md:h-28", content);
+  baseWindow("w-72 h-28 md:w-1/2 md:h-3/4", content);
 };

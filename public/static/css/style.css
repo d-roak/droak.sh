@@ -888,7 +888,12 @@ video {
 }
 
 body {
-  background-color: #fbdfd0;
+  background: rgb(169,199,206);
+  background: linear-gradient(180deg, rgba(169,199,206,1) 0%, rgba(165,211,197,1) 100%);
+}
+
+img {
+  filter: brightness(0.9) contrast(1.4);
 }
 
 .focus-visible\:outline-none:focus-visible {
@@ -913,16 +918,16 @@ body {
     height: 24rem;
   }
 
-  .md\:h-28 {
-    height: 7rem;
+  .md\:h-3\/4 {
+    height: 75%;
   }
 
   .md\:w-\[30rem\] {
     width: 30rem;
   }
 
-  .md\:w-72 {
-    width: 18rem;
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:w-96 {

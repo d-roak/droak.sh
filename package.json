@@ -1,5 +1,5 @@
 {
-  "name": "jpldcarvalho.com",
+  "name": "droak.sh",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jpldcarvalho/jpldcarvalho.com.git"
+    "url": "git+https://github.com/d-roak/droak.sh.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jpldcarvalho/jpldcarvalho.com/issues"
+    "url": "https://github.com/d-roak/droak.sh/issues"
   },
-  "homepage": "https://github.com/jpldcarvalho/jpldcarvalho.com#readme",
+  "homepage": "https://github.com/d-roak/droak.sh#readme",
   "dependencies": {
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
