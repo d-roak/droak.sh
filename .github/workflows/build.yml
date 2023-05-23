@@ -11,7 +11,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: 12.13
+          node-version: 16
       - run: npm install
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
