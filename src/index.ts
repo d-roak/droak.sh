@@ -22,7 +22,7 @@ const btns = [
   {
     icon: "./assets/icons/contacts.svg",
     text: "Contacts",
-    position: "md:col-span-6 lg:col-span-12 md:row-span-3",
+    position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
       openContacts();
     },
