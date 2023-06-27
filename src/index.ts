@@ -22,9 +22,17 @@ const btns = [
   {
     icon: "./assets/icons/contacts.svg",
     text: "Contacts",
-    position: "md:col-span-6 lg:col-span-12 md:row-span-3 align-top items-start",
+    position: "md:col-span-6 lg:col-span-12 md:row-span-3",
     onclick: () => {
       openContacts();
+    },
+  },
+  {
+    icon: "./assets/icons/brain.png",
+    text: "Knowledge",
+    position: "md:col-span-6 lg:col-span-12 md:row-span-3 align-top items-start",
+    onclick: () => {
+      window.open("https://knowledge.droak.sh", "_blank")?.focus();
     },
   },
   {
@@ -46,7 +54,7 @@ const btns = [
   {
     icon: "./assets/icons/youtube.svg",
     text: "YouTube",
-    position: "md:col-span-2 lg:col-span-8",
+    position: "md:col-span-2 lg:col-span-9",
     onclick: () => {
       window
         .open(

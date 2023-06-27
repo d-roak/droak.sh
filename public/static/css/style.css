@@ -949,8 +949,8 @@ img {
     grid-column: span 12 / span 12;
   }
 
-  .lg\:col-span-8 {
-    grid-column: span 8 / span 8;
+  .lg\:col-span-9 {
+    grid-column: span 9 / span 9;
   }
 
   .lg\:grid-cols-12 {
