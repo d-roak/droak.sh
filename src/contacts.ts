@@ -11,12 +11,12 @@ export const openContacts = () => {
       <img src="./assets/icons/briefcase.svg" class="w-6 h-6 mt-4">
       <span class="ml-2 text-lg">Business</span>
     </div>
-    <a href="mailto:joao.carvalho@tripleoak.vc" class="text-sm md:text-base text-pastel-blue underline">joao.carvalho[at]tripleoak.vc</a>
+    <a href="mailto:oak@tripleoak.vc" class="text-sm md:text-base text-pastel-blue underline">oak[at]tripleoak.vc</a>
     <div class="mt-2 flex items-end">
       <img src="./assets/icons/idea.svg" class="w-6 h-6 mt-4">
       <span class="ml-2 text-lg">Research</span>
     </div>
-    <a href="mailto:joao.carvalho@tripleoak.vc" class="text-sm md:text-base text-pastel-blue underline">joao.carvalho[at]tripleoak.vc</a>
+    <a href="mailto:oak@ziku.io" class="text-sm md:text-base text-pastel-blue underline">oak[at]ziku.io</a>
     <div class="mt-2 flex items-end">
       <img src="./assets/icons/user.svg" class="w-6 h-6 mt-4">
       <span class="ml-2 text-lg">Personal</span>
