@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: 16
       - run: |
-          npm install
-          npm run build
+          yarn
+          yarn build
           echo 'https://yab.kaizokulabs.com' > out/CNAME
       - uses: peaceiris/actions-gh-pages@v3
         with:

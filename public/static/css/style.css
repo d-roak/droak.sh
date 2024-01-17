@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,8 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -44,6 +46,10 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -184,6 +190,10 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
   /* 1 */
   font-size: 100%;
   /* 1 */
@@ -336,6 +346,14 @@ menu {
 }
 
 /*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
 Prevent resizing textareas horizontally by default.
 */
 
@@ -410,6 +428,12 @@ video {
   height: auto;
 }
 
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -424,53 +448,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
-
-::-webkit-backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -518,6 +498,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -559,20 +542,12 @@ video {
   position: absolute;
 }
 
-.top-1\/2 {
-  top: 50%;
+.left-0 {
+  left: 0px;
 }
 
 .left-1\/2 {
   left: 50%;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.left-0 {
-  left: 0px;
 }
 
 .right-10 {
@@ -581,6 +556,14 @@ video {
 
 .right-4 {
   right: 1rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .top-6 {
@@ -592,12 +575,8 @@ video {
   margin-right: auto;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .ml-2 {
@@ -608,8 +587,12 @@ video {
   margin-top: 0.25rem;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-8 {
@@ -628,68 +611,68 @@ video {
   display: grid;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-4 {
-  height: 1rem;
-}
-
-.h-3 {
-  height: 0.75rem;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .\!h-4 {
   height: 1rem !important;
-}
-
-.h-\[calc\(100\%-1\.5rem\)\] {
-  height: calc(100% - 1.5rem);
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.h-96 {
-  height: 24rem;
-}
-
-.h-28 {
-  height: 7rem;
 }
 
 .h-16 {
   height: 4rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-80 {
   height: 20rem;
 }
 
-.w-full {
-  width: 100%;
+.h-96 {
+  height: 24rem;
 }
 
-.w-4 {
-  width: 1rem;
+.h-\[calc\(100\%-1\.5rem\)\] {
+  height: calc(100% - 1.5rem);
 }
 
-.w-3 {
-  width: 0.75rem;
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .\!w-4 {
   width: 1rem !important;
 }
 
-.w-screen {
-  width: 100vw;
+.w-16 {
+  width: 4rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .w-6 {
@@ -700,12 +683,12 @@ video {
   width: 18rem;
 }
 
-.w-16 {
-  width: 4rem;
+.w-full {
+  width: 100%;
 }
 
-.w-24 {
-  width: 6rem;
+.w-screen {
+  width: 100vw;
 }
 
 .-translate-x-1\/2 {
@@ -754,14 +737,14 @@ video {
   border-radius: 9999px;
 }
 
-.rounded-t-2xl {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-
 .rounded-b-2xl {
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+}
+
+.rounded-t-2xl {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .border-2 {
@@ -772,14 +755,14 @@ video {
   border-bottom-width: 2px;
 }
 
-.border-pastel-grey {
-  --tw-border-opacity: 1;
-  border-color: rgb(145 148 155 / var(--tw-border-opacity));
-}
-
 .\!border-pastel-dark-grey {
   --tw-border-opacity: 1 !important;
   border-color: rgb(127 128 139 / var(--tw-border-opacity)) !important;
+}
+
+.border-pastel-grey {
+  --tw-border-opacity: 1;
+  border-color: rgb(145 148 155 / var(--tw-border-opacity));
 }
 
 .bg-pastel-blue {
@@ -806,14 +789,14 @@ video {
   padding: 1rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .align-top {
@@ -833,6 +816,11 @@ video {
   line-height: 2rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -848,22 +836,12 @@ video {
   line-height: 1rem;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-medium {
   font-weight: 500;
 }
 
-.text-pastel-dark-grey {
-  --tw-text-opacity: 1;
-  color: rgb(127 128 139 / var(--tw-text-opacity));
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-pastel-blue {
@@ -871,9 +849,13 @@ video {
   color: rgb(137 174 216 / var(--tw-text-opacity));
 }
 
+.text-pastel-dark-grey {
+  --tw-text-opacity: 1;
+  color: rgb(127 128 139 / var(--tw-text-opacity));
+}
+
 .underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 @font-face {
@@ -902,28 +884,24 @@ img {
 }
 
 @media (min-width: 768px) {
-  .md\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
   }
 
   .md\:row-span-3 {
     grid-row: span 3 / span 3;
   }
 
-  .md\:h-96 {
-    height: 24rem;
-  }
-
   .md\:h-3\/4 {
     height: 75%;
   }
 
-  .md\:w-\[30rem\] {
-    width: 30rem;
+  .md\:h-96 {
+    height: 24rem;
   }
 
   .md\:w-1\/2 {
@@ -932,6 +910,10 @@ img {
 
   .md\:w-96 {
     width: 24rem;
+  }
+
+  .md\:w-\[30rem\] {
+    width: 30rem;
   }
 
   .md\:grid-cols-6 {
