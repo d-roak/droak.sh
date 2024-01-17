@@ -17,11 +17,7 @@ jobs:
       - run: |
           yarn
           yarn build
-          echo 'https://yab.kaizokulabs.com' > out/CNAME
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          echo 'https://droak.sh' > public/CNAME
 
   deploy:
     environment:
