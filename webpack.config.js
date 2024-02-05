@@ -14,6 +14,12 @@ module.exports = {
   },
   resolve: {
     extensions: [ ".ts", ".js"],
+    fallback: {
+      "crypto": false,
+      "path": false,
+      "fs": false,
+      "perf_hooks": false,
+    }
   },
   output: {
     filename: "script.js",

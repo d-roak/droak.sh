@@ -1,14 +1,15 @@
-import { openDocuments } from "./documents";
-import { openContacts } from "./contacts";
-import { openInfo } from "./info";
+import { openDocuments } from "./windows/documents";
+import { openContacts } from "./windows/contacts";
+import { openInfo } from "./windows/info";
+import { openShell } from "./shell";
 
 const btns = [
   {
     icon: "./assets/icons/console.png",
-    text: "Shell Version",
+    text: "Shell",
     position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
-      window.open("https://shell.droak.sh", "_blank")?.focus();
+      openShell();
     },
   },
   {
