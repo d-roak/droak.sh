@@ -24,5 +24,6 @@ module.exports = {
   output: {
     filename: "script.js",
     path: path.resolve(__dirname, "public", "static", "bundle"),
+    publicPath: "/static/bundle/"
   },
 };
