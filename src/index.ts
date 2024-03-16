@@ -2,12 +2,13 @@ import { openDocuments } from "./windows/documents";
 import { openContacts } from "./windows/contacts";
 import { openInfo } from "./windows/info";
 import { openShell } from "./shell";
+import { openSocialMedia } from "./windows/social_media";
 
 const btns = [
   {
     icon: "./assets/icons/console.png",
     text: "Shell",
-    position: "md:col-span-6 lg:col-span-12",
+    position: "hidden lg:block lg:col-span-12",
     onclick: () => {
       openShell();
     },
@@ -37,32 +38,11 @@ const btns = [
     },
   },
   {
-    icon: "./assets/icons/github.svg",
-    text: "GitHub",
-    position: "",
+    icon: "./assets/icons/social_media.png",
+    text: "Social Media",
+    position: "md:col-span-5 lg:col-span-11",
     onclick: () => {
-      window.open("https://github.com/d-roak", "_blank")?.focus();
-    },
-  },
-  {
-    icon: "./assets/icons/twitter.gif",
-    text: "Twitter",
-    position: "",
-    onclick: () => {
-      window.open("https://twitter.com/droak_", "_blank")?.focus();
-    },
-  },
-  {
-    icon: "./assets/icons/youtube.svg",
-    text: "YouTube",
-    position: "md:col-span-2 lg:col-span-9",
-    onclick: () => {
-      window
-        .open(
-          "https://www.youtube.com/channel/UC0vboDaMi68l2c-lAkiPAzw",
-          "_blank"
-        )
-        ?.focus();
+      openSocialMedia();
     },
   },
   {

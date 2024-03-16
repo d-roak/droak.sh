@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tailwindcss -i ./src/style.css -o ./public/static/css/style.css & webpack && webpack-dev-server --port 8085",
+    "start": "tailwindcss -i ./src/style.css -o ./public/static/css/style.css & webpack && webpack-dev-server --hot --port 8085",
     "build": "tailwindcss -i ./src/style.css -o ./public/static/css/style.css && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
