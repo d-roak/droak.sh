@@ -25,10 +25,6 @@ export const openSocialMedia = () => {
       <img src="./assets/icons/instagram.png" class="w-8 h-8 mt-4">
       <a href="https://www.instagram.com/thisisoak___" target="_blank" class="ml-2 text-sm md:text-base text-pastel-blue underline">@thisisoak___</a>
     </div>
-    <div class="flex items-end">
-      <img src="./assets/icons/youtube.svg" class="w-8 h-8 mt-4">
-      <a href="https://www.youtube.com/@thisisoak_" target="_blank" class="ml-2 text-sm md:text-base text-pastel-blue underline">@thisisoak_</a>
-    </div>
   `;
 
   baseWindow("w-72 h-96 md:w-[30rem]", content);
