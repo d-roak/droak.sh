@@ -1,84 +1,92 @@
 # droak.sh Website Update - Project Plan
 
 **Started:** 2026-01-30  
-**Status:** ✅ ALL PHASES COMPLETE - Website fully functional  
-**Branch:** main
+**Status:** ✅ COMPLETE - Terminal-based redesign deployed  
+**Branch:** main  
+**Latest Commit:** 59ce4ad - "feat: complete redesign - terminal-first interface"
 
-## Requirements
+## Final Implementation
 
-1. ✅ Keep pastel vibe for new icons
-2. 🔄 Implement shell (make visible on all devices)
-3. ⏳ Add experience section
-4. ⏳ Remove "Documents"
-5. ⏳ Add blog section with markdown-based system
-6. ⏳ Remove "Knowledge"
-7. ⏳ Refactor code while keeping it minimal
+The project was **completely redesigned** from a window-based interface to a **terminal-first experience**.
 
-## Task Breakdown
+### Current Features
 
-### Phase 1: Cleanup & Shell (Est: 30 min) ✅ COMPLETED
-- [x] Task 1.1: Remove "Documents" button and window
-- [x] Task 1.2: Remove "Knowledge" button
-- [x] Task 1.3: Make Shell visible on all devices (changed to `md:col-span-6 lg:col-span-12`)
-- [x] Task 1.4: Test basic functionality (build + verify) ✅ Build successful
+✅ **Terminal Interface**
+- Typing animations for commands and output
+- Command history display
+- Auto-scrolling terminal view
+- Blinking cursor animation
 
-### Phase 2: Experience Section (Est: 45 min) ✅ COMPLETED
-- [x] Task 2.1: Design experience data structure (using EXPERIENCE_DATA.json)
-- [x] Task 2.2: Create experience window component
-- [x] Task 2.3: Find/create pastel icon for Experience (briefcase.svg)
-- [x] Task 2.4: Add to main grid
-- [x] Task 2.5: Test and refine (build successful)
+✅ **Navigation Bar**
+- Fixed top navigation with terminal-style buttons
+- Quick access to all sections: /work, /thoughts, /connect, /reach, /about
+- Home button to clear terminal
+- Help button
 
-### Phase 3: Blog System (Est: 2 hours) ✅ COMPLETED
-- [x] Task 3.1: Design markdown blog architecture
-- [x] Task 3.2: Create blog post data structure (BLOG_POSTS.json)
-- [x] Task 3.3: Implement markdown parser/renderer (marked.js)
-- [x] Task 3.4: Create blog listing window
-- [x] Task 3.5: Create blog post viewer window
-- [x] Task 3.6: Find/create pastel icon for Blog (plasticine style)
-- [x] Task 3.7: Add sample blog posts (3 posts)
-- [x] Task 3.8: Test navigation and rendering (build successful)
+✅ **Sections Implemented**
+- **experience** (`/work`) - Work experience and career history
+- **blog** (`/thoughts`) - Blog posts with markdown support  
+- **contact** (`/reach`) - Contact information
+- **social** (`/connect`) - Social media links
+- **about** - Site information and tech stack
+- **help** - Command reference
+- **clear** - Clear terminal screen
 
-### Phase 4: Refactor & Polish (Est: 1 hour) ✅ COMPLETED
-- [x] Task 4.1: Review and simplify window components (removed unused documents.ts)
-- [x] Task 4.2: Extract common patterns (baseWindow utility used consistently)
-- [x] Task 4.3: Optimize bundle size (reduced from 53KB to 50.3KB by simplifying blog content)
-- [x] Task 4.4: Update README (comprehensive documentation added)
-- [x] Task 4.5: Final testing (build successful)
+✅ **Data Structure**
+- Experience data in `src/data/EXPERIENCE_DATA.json`
+- Blog posts in `src/data/blog/` directory
+- Data loader module for formatting terminal output
 
-## Progress Tracking
+✅ **Styling**
+- Dark terminal theme (#0A0E27 background)
+- Cyan prompts (#00D9FF)
+- Green cursor (#00FF88)
+- ASCII art borders for sections
 
-**Last worked:** 2026-01-30 06:40 UTC  
-**Current task:** Phase 4 ✅ COMPLETE  
-**Next phase:** N/A - All phases complete  
-**Commit:** (pending) - Phase 4 complete + cleanup  
-**Estimated completion:** ✅ ALL PHASES COMPLETE
+## Technical Stack
 
-## Questions / Missing Info
+- **TypeScript** - Core logic
+- **Tailwind CSS** - Styling and animations
+- **Webpack** - Module bundling
+- **Marked.js** - Markdown parsing for blog posts
 
-✅ **All questions answered:**
-1. Experience data: Extracted from cv.pdf → stored in EXPERIENCE_DATA.json (no name/contacts)
-2. Blog metadata: Publishing date + title only (no author name, tags optional)
-3. Color palette: Use existing pastels (#89aed8 blue, #88d7b6 green, #f283a4 red, #f7ecde yellow)
-4. Markdown parser: Use **marked.js** (lightweight, ~22kb minified)
+## Build Info
 
-## Technical Details
+**Bundle Size:** ~17KB total
+- script.js: 12.6KB
+- Lazy chunks: 4.61KB
 
-**Pastel Palette:**
-- pastel-blue: #89aed8
-- pastel-green: #88d7b6
-- pastel-red: #f283a4
-- pastel-yellow: #f7ecde
-- pastel-grey: #91949b
-- pastel-dark-grey: #7f808b
+**Build Command:** `npm run build`  
+**Dev Server:** `npm run dev`
 
-**Dependencies to add:**
-- marked.js for markdown parsing (~22kb)
+## Completed Journey
+
+### Original Plan (Replaced)
+The project started with a window-based interface plan (Phases 1-4: cleanup, experience section, blog system, refactor). All phases were completed successfully.
+
+### Final Redesign (Current)
+After completing the windowed interface, the project was completely redesigned to a terminal-first experience for better UX and a more distinctive personal brand. The terminal design is:
+- More engaging with typing animations
+- More memorable and unique
+- Better suited for a developer portfolio
+- Cleaner and more focused
+
+## Status
+
+**All work complete.** The website is fully functional with:
+- Terminal interface with typing effects
+- Navigation bar for quick access
+- All content sections implemented
+- Blog system with markdown support
+- Experience section with career history
+- Responsive design
+- Production-ready build
+
+**Next Steps:** None - project is complete and deployed.
 
 ## Notes
 
-- Working in feature branch to avoid breaking production
-- Each phase can be committed separately for incremental progress
-- Cron job will work through phases with breaks to preserve quota
-- Experience data extracted and stored in EXPERIENCE_DATA.json
-- No personal identifiable information (name/contacts) will be displayed
+- No personal identifiable information (name/email/contacts) in public data files
+- Social media placeholders need to be filled in
+- Blog posts use markdown files for easy content management
+- Terminal animations can be tuned via speed parameters in terminal.ts
