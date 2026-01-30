@@ -1,8 +1,8 @@
 # droak.sh Website Update - Project Plan
 
 **Started:** 2026-01-30  
-**Status:** Phase 1 ✅ LIVE on main branch  
-**Branch:** main (feature/website-update also available)
+**Status:** Phase 2 ✅ COMPLETE (Experience section added)  
+**Branch:** main
 
 ## Requirements
 
@@ -22,12 +22,12 @@
 - [x] Task 1.3: Make Shell visible on all devices (changed to `md:col-span-6 lg:col-span-12`)
 - [x] Task 1.4: Test basic functionality (build + verify) ✅ Build successful
 
-### Phase 2: Experience Section (Est: 45 min)
-- [ ] Task 2.1: Design experience data structure
-- [ ] Task 2.2: Create experience window component
-- [ ] Task 2.3: Find/create pastel icon for Experience
-- [ ] Task 2.4: Add to main grid
-- [ ] Task 2.5: Test and refine
+### Phase 2: Experience Section (Est: 45 min) ✅ COMPLETED
+- [x] Task 2.1: Design experience data structure (using EXPERIENCE_DATA.json)
+- [x] Task 2.2: Create experience window component
+- [x] Task 2.3: Find/create pastel icon for Experience (briefcase.svg)
+- [x] Task 2.4: Add to main grid
+- [x] Task 2.5: Test and refine (build successful)
 
 ### Phase 3: Blog System (Est: 2 hours)
 - [ ] Task 3.1: Design markdown blog architecture
@@ -48,11 +48,11 @@
 
 ## Progress Tracking
 
-**Last worked:** 2026-01-30 06:05 UTC  
-**Current task:** Phase 1 ✅ COMPLETE  
-**Next phase:** Phase 2 - Experience Section  
-**Commit:** 1c09cad - Phase 1 complete  
-**Estimated completion:** Phase 2 - Jan 30, Phase 3-4 - TBD
+**Last worked:** 2026-01-30 06:26 UTC  
+**Current task:** Phase 2 ✅ COMPLETE  
+**Next phase:** Phase 3 - Blog System  
+**Commit:** (pending) - Phase 2 complete  
+**Estimated completion:** Phase 2 ✅ Done, Phase 3-4 - TBD
 
 ## Questions / Missing Info
 

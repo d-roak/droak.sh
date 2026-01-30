@@ -1,4 +1,5 @@
 import { openContacts } from "./windows/contacts";
+import { openExperience } from "./windows/experience";
 import { openInfo } from "./windows/info";
 import { openShell } from "./shell";
 import { openSocialMedia } from "./windows/social_media";
@@ -18,6 +19,14 @@ const btns = [
     position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
       openContacts();
+    },
+  },
+  {
+    icon: "./assets/icons/briefcase.svg",
+    text: "Experience",
+    position: "md:col-span-6 lg:col-span-12",
+    onclick: () => {
+      openExperience();
     },
   },
   {
