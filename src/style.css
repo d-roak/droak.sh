@@ -36,3 +36,70 @@ body {
 img {
   filter: brightness(0.9) contrast(1.4);
 }
+
+/* Icon animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Apply animations to button icons */
+button img {
+  animation: float 3s ease-in-out infinite;
+}
+
+button:nth-child(1) img {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+button:nth-child(2) img {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+button:nth-child(3) img {
+  animation: bounce-gentle 2.5s ease-in-out infinite;
+}
+
+button:nth-child(4) img {
+  animation: float 3.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+button:hover img {
+  animation: pulse-subtle 0.5s ease-in-out infinite;
+  transform: scale(1.1);
+}
