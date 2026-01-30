@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#0A0E27" rx="80"/>
+  
+  <!-- Terminal window border -->
+  <rect x="80" y="120" width="352" height="272" fill="#1A1F3A" stroke="#00D9FF" stroke-width="4" rx="8"/>
+  
+  <!-- Prompt symbol > -->
+  <text x="120" y="280" font-family="monospace" font-size="140" font-weight="bold" fill="#00FF88">&gt;</text>
+  
+  <!-- Cursor -->
+  <rect x="240" y="200" width="40" height="140" fill="#00D9FF" opacity="0.9"/>
+</svg>

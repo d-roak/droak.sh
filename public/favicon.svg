@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="32" height="32" fill="#0A0E27" rx="6"/>
+  
+  <!-- Terminal bracket [ -->
+  <path d="M 10 8 L 8 8 L 8 24 L 10 24" stroke="#00D9FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Prompt > -->
+  <path d="M 14 12 L 18 16 L 14 20" stroke="#00FF88" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Cursor -->
+  <rect x="20" y="14" width="2" height="4" fill="#00D9FF"/>
+</svg>
