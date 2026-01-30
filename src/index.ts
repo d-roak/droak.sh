@@ -1,3 +1,4 @@
+import { openBlog } from "./windows/blog";
 import { openContacts } from "./windows/contacts";
 import { openExperience } from "./windows/experience";
 import { openInfo } from "./windows/info";
@@ -27,6 +28,14 @@ const btns = [
     position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
       openExperience();
+    },
+  },
+  {
+    icon: "./assets/icons/blog.png",
+    text: "Blog",
+    position: "md:col-span-6 lg:col-span-12",
+    onclick: () => {
+      openBlog();
     },
   },
   {

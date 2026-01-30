@@ -1,0 +1,20 @@
+[
+  {
+    "id": "welcome-to-my-website",
+    "title": "Welcome to My Website",
+    "date": "2026-01-30",
+    "content": "# Welcome to My Website\n\nThis is my first blog post on my new website. I've built this site to share my thoughts, experiences, and projects with the world.\n\n## What You'll Find Here\n\n- **Technical posts** about software development, security, and infrastructure\n- **Career insights** from my journey in tech\n- **Personal reflections** on learning and growth\n\n## About This Site\n\nThis website is built with TypeScript and Tailwind CSS, featuring a unique desktop-style interface. Each icon opens a window with different content, creating an interactive experience.\n\nStay tuned for more posts coming soon!"
+  },
+  {
+    "id": "building-with-typescript",
+    "title": "Building Modern Web Apps with TypeScript",
+    "date": "2026-01-28",
+    "content": "# Building Modern Web Apps with TypeScript\n\nTypeScript has become an essential tool in modern web development. Here's why I use it for all my projects.\n\n## Type Safety\n\nOne of the biggest advantages is catching errors at compile time rather than runtime. This means:\n\n- Fewer bugs in production\n- Better developer experience with autocomplete\n- Easier refactoring\n\n## Better Tooling\n\nWith TypeScript, your IDE can provide:\n\n1. Intelligent code completion\n2. Inline documentation\n3. Refactoring tools\n\n## The Learning Curve\n\nWhile TypeScript adds complexity initially, the long-term benefits far outweigh the initial learning investment.\n\n```typescript\ninterface User {\n  name: string;\n  email: string;\n  role: 'admin' | 'user';\n}\n\nfunction greetUser(user: User): string {\n  return `Hello, ${user.name}!`;\n}\n```\n\nThe type system helps catch bugs before they happen."
+  },
+  {
+    "id": "security-first-development",
+    "title": "Security-First Development Practices",
+    "date": "2026-01-25",
+    "content": "# Security-First Development Practices\n\nFrom my experience at Accenture and working with security teams, here are the essential practices every developer should follow.\n\n## 1. Input Validation\n\nNever trust user input. Always validate and sanitize:\n\n- **Client-side validation** for UX\n- **Server-side validation** for security\n- **Database-level constraints** as a final safeguard\n\n## 2. Authentication & Authorization\n\nImplement proper access controls:\n\n- Use established libraries (don't roll your own crypto)\n- Implement proper session management\n- Follow the principle of least privilege\n\n## 3. Keep Dependencies Updated\n\nRegularly update your dependencies to patch known vulnerabilities:\n\n```bash\nnpm audit\nnpm audit fix\n```\n\n## 4. Security Headers\n\nAlways configure proper security headers:\n\n- Content-Security-Policy\n- X-Frame-Options\n- Strict-Transport-Security\n\n## Conclusion\n\nSecurity isn't a feature you add later—it needs to be built in from the start."
+  }
+]

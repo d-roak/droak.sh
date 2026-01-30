@@ -1,7 +1,7 @@
 # droak.sh Website Update - Project Plan
 
 **Started:** 2026-01-30  
-**Status:** Phase 2 ✅ COMPLETE (Experience section added)  
+**Status:** Phase 3 ✅ COMPLETE (Blog system with markdown support)  
 **Branch:** main
 
 ## Requirements
@@ -29,15 +29,15 @@
 - [x] Task 2.4: Add to main grid
 - [x] Task 2.5: Test and refine (build successful)
 
-### Phase 3: Blog System (Est: 2 hours)
-- [ ] Task 3.1: Design markdown blog architecture
-- [ ] Task 3.2: Create blog post data structure
-- [ ] Task 3.3: Implement markdown parser/renderer
-- [ ] Task 3.4: Create blog listing window
-- [ ] Task 3.5: Create blog post viewer window
-- [ ] Task 3.6: Find/create pastel icon for Blog
-- [ ] Task 3.7: Add sample blog posts
-- [ ] Task 3.8: Test navigation and rendering
+### Phase 3: Blog System (Est: 2 hours) ✅ COMPLETED
+- [x] Task 3.1: Design markdown blog architecture
+- [x] Task 3.2: Create blog post data structure (BLOG_POSTS.json)
+- [x] Task 3.3: Implement markdown parser/renderer (marked.js)
+- [x] Task 3.4: Create blog listing window
+- [x] Task 3.5: Create blog post viewer window
+- [x] Task 3.6: Find/create pastel icon for Blog (plasticine style)
+- [x] Task 3.7: Add sample blog posts (3 posts)
+- [x] Task 3.8: Test navigation and rendering (build successful)
 
 ### Phase 4: Refactor & Polish (Est: 1 hour)
 - [ ] Task 4.1: Review and simplify window components
@@ -48,11 +48,11 @@
 
 ## Progress Tracking
 
-**Last worked:** 2026-01-30 06:26 UTC  
-**Current task:** Phase 2 ✅ COMPLETE  
-**Next phase:** Phase 3 - Blog System  
-**Commit:** (pending) - Phase 2 complete  
-**Estimated completion:** Phase 2 ✅ Done, Phase 3-4 - TBD
+**Last worked:** 2026-01-30 06:35 UTC  
+**Current task:** Phase 3 ✅ COMPLETE  
+**Next phase:** Phase 4 - Refactor & Polish  
+**Commit:** (pending) - Phase 3 complete  
+**Estimated completion:** Phase 2-3 ✅ Done, Phase 4 - TBD
 
 ## Questions / Missing Info
 

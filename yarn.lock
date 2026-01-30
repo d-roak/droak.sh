@@ -1298,6 +1298,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+marked@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.npmjs.org/marked/-/marked-17.0.1.tgz"
+  integrity sha512-boeBdiS0ghpWcSwoNm/jJBwdpFaMnZWRzjA6SkUMYb40SVaN1x7mmfGKp0jvexGcx+7y2La5zRZsYFZI6Qpypg==
+
 media-typer@0.3.0:
   version "0.3.0"
 
