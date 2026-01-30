@@ -1,7 +1,7 @@
 {
   "name": "droak.sh",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website with desktop-style interface",
   "main": "index.js",
   "scripts": {
     "start": "tailwindcss -i ./src/style.css -o ./public/static/css/style.css & webpack && webpack-dev-server --hot --port 8085",
