@@ -1,8 +1,8 @@
 # droak.sh Website Update - Project Plan
 
 **Started:** 2026-01-30  
-**Status:** Planning  
-**Branch:** feature/website-update
+**Status:** Phase 1 ✅ LIVE on main branch  
+**Branch:** main (feature/website-update also available)
 
 ## Requirements
 
