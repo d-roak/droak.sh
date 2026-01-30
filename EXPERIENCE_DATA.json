@@ -1,0 +1,60 @@
+[
+  {
+    "company": "TripleOak",
+    "role": "Co-Founder & Managing Partner",
+    "location": "Portugal",
+    "period": "Sep. 2019 - Present",
+    "description": [
+      "Started as a mix of consulting firm with software house. Currently a small holding company.",
+      "Delegated CIO for a small stone manufacturing company."
+    ]
+  },
+  {
+    "company": "Accenture",
+    "role": "Security Associate",
+    "location": "Lisbon, Portugal",
+    "period": "Nov. 2020 - Jul. 2021",
+    "description": [
+      "Banking clients: Maintenance of an instance of SailPoint IdentityIQ for tens of thousands of users in banks.",
+      "Utility client (minor project): Static and Dynamic application security testing, with manual testing of detected vulnerabilities."
+    ]
+  },
+  {
+    "company": "Solactive",
+    "role": "Student Job",
+    "location": "Dresden, Germany",
+    "period": "Jan. 2019 - Mar. 2019",
+    "description": [
+      "Supporting the maintenance of the infrastructure architecture.",
+      "Improving the automation process for the management of the infrastructure."
+    ]
+  },
+  {
+    "company": "Fundação para a Ciência e Tecnologia | FCCN",
+    "role": "Intern",
+    "location": "Lisboa, Portugal",
+    "period": "Nov. 2017 - Mar. 2018",
+    "description": [
+      "Internship with the security incidents response team (RCTS CERT) responsible for overseeing the educational networks in Portugal.",
+      "Restructuring the Intrusion Detection System in the data centers operated by the FCCN unit."
+    ]
+  },
+  {
+    "company": "NOVA-LINCS",
+    "role": "Research Assistant",
+    "location": "Caparica, Portugal",
+    "period": "Jul. 2015 - Jul. 2017",
+    "description": [
+      "Development of a DHT Protocol to mitigate churn problems."
+    ]
+  },
+  {
+    "company": "BetaCode (Start-up company)",
+    "role": "Developer",
+    "location": "Caparica, Portugal",
+    "period": "Feb. 2017 - Jun. 2017",
+    "description": [
+      "Developed enterprise websites and webapps."
+    ]
+  }
+]

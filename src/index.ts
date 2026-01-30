@@ -1,4 +1,3 @@
-import { openDocuments } from "./windows/documents";
 import { openContacts } from "./windows/contacts";
 import { openInfo } from "./windows/info";
 import { openShell } from "./shell";
@@ -8,17 +7,9 @@ const btns = [
   {
     icon: "./assets/icons/console.png",
     text: "Shell",
-    position: "hidden lg:block lg:col-span-12",
-    onclick: () => {
-      openShell();
-    },
-  },
-  {
-    icon: "./assets/icons/opened-folder.gif",
-    text: "Documents",
     position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
-      openDocuments();
+      openShell();
     },
   },
   {
@@ -27,14 +18,6 @@ const btns = [
     position: "md:col-span-6 lg:col-span-12",
     onclick: () => {
       openContacts();
-    },
-  },
-  {
-    icon: "./assets/icons/brain.png",
-    text: "Knowledge",
-    position: "md:col-span-6 lg:col-span-12 md:row-span-3 align-top items-start",
-    onclick: () => {
-      window.open("https://knowledge.droak.sh", "_blank")?.focus();
     },
   },
   {
