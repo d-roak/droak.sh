@@ -8,7 +8,11 @@ export class Terminal {
   private isTyping: boolean = false;
 
   constructor(containerId: string) {
-    this.container = document.getElementById(containerId) as HTMLElement;
+    const el = document.getElementById(containerId);
+    if (!el) {
+      throw new Error(`Terminal container #${containerId} not found`);
+    }
+    this.container = el;
     this.init();
   }
 
