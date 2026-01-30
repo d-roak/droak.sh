@@ -1,182 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "dynapuff";
-  src: url("../../assets/fonts/dynapuff.ttf");
-}
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: rgb(169,199,206);
-  background: linear-gradient(180deg, rgba(169,199,206,1) 0%, rgba(165,211,197,1) 100%);
+  background: #0A0E27;
+  color: #E8E9ED;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* Custom scrollbar */
 *::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
+  height: 8px;
 }
  
 *::-webkit-scrollbar-track {
-  background-color: #91949b;
-  border-radius: 1rem;
-  margin-top: 1px;
-  margin-bottom: 15px;
+  background-color: #1A1F3A;
 }
  
 *::-webkit-scrollbar-thumb {
-  background-color: #7f808b;
-  border-radius: 1rem;
+  background-color: #2D3561;
+  border-radius: 4px;
 }
 
-img {
-  filter: brightness(0.9) contrast(1.4);
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3D4571;
 }
 
-/* Icon animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
   }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes pulse-subtle {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
+  51%, 100% {
+    opacity: 0;
   }
 }
 
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
+.animate-pulse {
+  animation: blink 1s infinite;
 }
 
-@keyframes bounce-gentle {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+/* Smooth transitions */
+button {
+  transition: all 0.2s ease;
 }
 
-/* Apply animations to button icons */
-button img {
-  animation: float 3s ease-in-out infinite;
+/* Focus styles */
+button:focus-visible {
+  outline: 2px solid #00D9FF;
+  outline-offset: 2px;
 }
 
-button:nth-child(1) img {
-  animation: pulse-subtle 2s ease-in-out infinite;
+/* Glow effect on hover */
+button:hover {
+  text-shadow: 0 0 8px currentColor;
 }
 
-button:nth-child(2) img {
-  animation: wiggle 3s ease-in-out infinite;
+/* Link styles */
+a {
+  color: #00D9FF;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-button:nth-child(3) img {
-  animation: bounce-gentle 2.5s ease-in-out infinite;
-}
-
-button:nth-child(4) img {
-  animation: float 3.5s ease-in-out infinite;
-  animation-delay: 0.3s;
-}
-
-button:hover img {
-  animation: pulse-subtle 0.5s ease-in-out infinite;
-  transform: scale(1.1);
-}
-
-/* Blog post prose styles */
-.prose {
-  color: #333;
-  line-height: 1.7;
-}
-
-.prose h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #7f808b;
-}
-
-.prose h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #7f808b;
-}
-
-.prose h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  color: #7f808b;
-}
-
-.prose p {
-  margin-bottom: 1rem;
-}
-
-.prose ul, .prose ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.prose li {
-  margin-bottom: 0.5rem;
-}
-
-.prose code {
-  background-color: #f7ecde;
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  font-family: monospace;
-}
-
-.prose pre {
-  background-color: #f7ecde;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  margin-bottom: 1rem;
-}
-
-.prose pre code {
-  background-color: transparent;
-  padding: 0;
-}
-
-.prose a {
-  color: #89aed8;
+a:hover {
+  color: #00FF88;
   text-decoration: underline;
 }
 
-.prose a:hover {
-  color: #6a8eb8;
+/* Code blocks */
+code {
+  background-color: #1A1F3A;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  color: #00FF88;
 }
 
-.prose strong {
-  font-weight: 600;
-  color: #7f808b;
+pre {
+  background-color: #1A1F3A;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid #2D3561;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #E8E9ED;
+}
+
+/* Mono font utility */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Selection */
+::selection {
+  background-color: #00D9FF;
+  color: #0A0E27;
+}
+
+/* Box styles for terminal sections */
+.terminal-box {
+  border: 1px solid #2D3561;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #1A1F3A;
+}
+
+/* Timeline connector */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #00D9FF;
+  border-radius: 50%;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 2rem;
+  border-left: 2px solid #2D3561;
+}
+
+/* Markdown-style headers */
+h1::before {
+  content: '# ';
+  color: #7B61FF;
+}
+
+h2::before {
+  content: '## ';
+  color: #7B61FF;
+}
+
+h3::before {
+  content: '### ';
+  color: #7B61FF;
 }
