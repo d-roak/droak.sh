@@ -1,24 +1,52 @@
 # droak.sh
 
-Personal website with a desktop-style interface built with TypeScript and Tailwind CSS.
+Terminal-style personal website with interactive command-line interface.
 
 ## Features
 
-- **Desktop-style UI**: Interactive window system with draggable components
-- **Shell Terminal**: Command-line interface for navigation
-- **Experience Section**: Professional work history
-- **Blog System**: Markdown-powered blog with sample posts
-- **Social Media Links**: Quick access to social profiles
-- **Contacts**: Get in touch
-- **Animated Icons**: Smooth CSS animations on all interface elements
+- **Full Terminal Interface**: Interactive CLI experience in the browser
+- **Command System**: Type commands or click clickable elements
+- **Fast Rendering**: Lightweight, minimal dependencies
+- **Dark Theme**: Modern terminal aesthetic with neon accents
+- **History & Autocomplete**: Arrow keys for history, Tab for autocomplete
+- **Markdown Blog**: Blog system with markdown support
+
+## Commands
+
+```bash
+help         # Show available commands
+experience   # View work history
+blog         # List blog posts
+contact      # Contact information
+social       # Social media links
+about        # About this site
+clear        # Clear terminal
+```
 
 ## Tech Stack
 
 - **TypeScript**: Type-safe development
 - **Tailwind CSS**: Utility-first styling
 - **Webpack**: Module bundling
-- **marked.js**: Markdown parsing for blog posts
-- **GitHub Pages**: Hosting and deployment
+- **marked.js**: Markdown parsing
+- **GitHub Pages**: Hosting
+
+## Project Structure
+
+```
+droak.sh/
+├── public/              # Static assets
+│   ├── assets/          # Fonts and favicons
+│   ├── static/          # Generated CSS and JS
+│   └── index.html       # Entry point
+├── src/                 # Source code
+│   ├── terminal.ts      # Terminal implementation
+│   ├── index.ts         # App initialization
+│   ├── data/            # Data loader utilities
+│   └── style.css        # Styles
+├── BLOG_POSTS.json      # Blog content
+└── EXPERIENCE_DATA.json # Work experience
+```
 
 ## Development
 
@@ -29,28 +57,19 @@ npm install
 # Build for production
 npm run build
 
-# The built files are in /public
+# Output: public/static/bundle/script.js
 ```
 
 ## Deployment
 
-This site is automatically deployed to GitHub Pages via GitHub Actions on every push to `main`.
+Automatically deployed to GitHub Pages via GitHub Actions on push to `main`.
 
-## Project Structure
+## Design
 
-```
-droak.sh/
-├── public/          # Static assets and build output
-│   ├── assets/      # Icons and fonts
-│   └── static/      # Generated CSS
-├── src/             # TypeScript source
-│   ├── windows/     # Window components (blog, contacts, etc.)
-│   ├── shell/       # Terminal shell
-│   └── shared/      # Shared utilities
-├── BLOG_POSTS.json  # Blog content
-├── EXPERIENCE_DATA.json  # Work experience
-└── PROJECT_PLAN.md  # Development roadmap
-```
+- **Color Palette**: Deep navy (#0A0E27) with cyan (#00D9FF), purple (#7B61FF), and green (#00FF88) accents
+- **Typography**: JetBrains Mono (terminal), Inter (fallback)
+- **Bundle Size**: ~17KB (minified + gzipped)
+- **Theme**: Brutalist terminal meets modern minimalism
 
 ## License
 

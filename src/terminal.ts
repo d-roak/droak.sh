@@ -2,10 +2,12 @@ export class Terminal {
   private container: HTMLElement;
   private output!: HTMLElement;
   private promptLine!: HTMLElement;
-  private input!: HTMLElement;
+  private inputEl!: HTMLInputElement;
   private cursor!: HTMLElement;
   private currentCommand: string = "";
   private isTyping: boolean = false;
+  private commandHistory: string[] = [];
+  private historyIndex: number = -1;
 
   constructor(containerId: string) {
     const el = document.getElementById(containerId);
@@ -19,7 +21,7 @@ export class Terminal {
   private init() {
     // Clear container
     this.container.innerHTML = "";
-    this.container.className = "h-screen bg-[#0A0E27] text-[#E8E9ED] font-mono p-6 overflow-y-auto";
+    this.container.className = "h-screen bg-[#0A0E27] text-[#E8E9ED] font-mono p-6 overflow-hidden";
 
     // Create output area
     this.output = document.createElement("div");
@@ -49,19 +51,70 @@ export class Terminal {
     promptEnd.className = "text-[#00D9FF]";
     promptEnd.textContent = "]$";
 
-    this.input = document.createElement("span");
-    this.input.className = "text-[#E8E9ED] ml-2";
-
-    this.cursor = document.createElement("span");
-    this.cursor.className = "inline-block w-2 h-5 bg-[#00FF88] ml-1 animate-pulse";
+    // Create actual input element
+    this.inputEl = document.createElement("input");
+    this.inputEl.type = "text";
+    this.inputEl.className = "bg-transparent border-none outline-none text-[#E8E9ED] ml-2 flex-1 font-mono caret-[#00FF88]";
+    this.inputEl.spellcheck = false;
+    this.inputEl.autocomplete = "off";
+    
+    // Handle input
+    this.inputEl.addEventListener("keydown", (e) => this.handleKeyDown(e));
 
     this.promptLine.appendChild(prompt);
     this.promptLine.appendChild(path);
     this.promptLine.appendChild(promptEnd);
-    this.promptLine.appendChild(this.input);
-    this.promptLine.appendChild(this.cursor);
+    this.promptLine.appendChild(this.inputEl);
 
     this.container.appendChild(this.promptLine);
+    
+    // Focus input
+    this.inputEl.focus();
+    
+    // Refocus on click anywhere
+    this.container.addEventListener("click", () => {
+      this.inputEl.focus();
+    });
+  }
+
+  private handleKeyDown(e: KeyboardEvent) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const cmd = this.inputEl.value.trim();
+      if (cmd) {
+        this.commandHistory.push(cmd);
+        this.historyIndex = this.commandHistory.length;
+        this.executeCommand(cmd);
+      }
+      this.inputEl.value = "";
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (this.historyIndex > 0) {
+        this.historyIndex--;
+        this.inputEl.value = this.commandHistory[this.historyIndex];
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (this.historyIndex < this.commandHistory.length - 1) {
+        this.historyIndex++;
+        this.inputEl.value = this.commandHistory[this.historyIndex];
+      } else {
+        this.historyIndex = this.commandHistory.length;
+        this.inputEl.value = "";
+      }
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      // Basic autocomplete
+      const partial = this.inputEl.value;
+      const commands = ["help", "experience", "work", "blog", "thoughts", "contact", "contacts", "social", "links", "about", "info", "clear"];
+      const matches = commands.filter(cmd => cmd.startsWith(partial));
+      if (matches.length === 1) {
+        this.inputEl.value = matches[0];
+      }
+    } else if (e.ctrlKey && e.key === "l") {
+      e.preventDefault();
+      this.clearTerminal();
+    }
   }
 
   private showWelcome() {
@@ -82,10 +135,7 @@ Type 'help' to see available commands or click a section below.
     this.isTyping = true;
     this.currentCommand = cmd;
 
-    // Type the command
-    await this.typeCommand(cmd);
-
-    // Add command to history
+    // Add command to history display
     this.addCommandToHistory(cmd);
 
     // Execute and show output
@@ -93,34 +143,68 @@ Type 'help' to see available commands or click a section below.
     await this.typeOutput(output);
 
     // Reset for next command
-    this.input.textContent = "";
     this.currentCommand = "";
     this.isTyping = false;
-    this.scrollToBottom();
+    this.inputEl.value = "";
+    this.inputEl.focus();
   }
 
-  private async typeCommand(cmd: string, speed: number = 30) {
-    this.input.textContent = "";
-    for (let i = 0; i < cmd.length; i++) {
-      this.input.textContent += cmd[i];
-      await this.sleep(speed);
-    }
-    await this.sleep(300);
-  }
-
-  private async typeOutput(text: string, speed: number = 1) {
+  private async typeOutput(text: string, speed: number = 0.5) {
     const outputDiv = document.createElement("div");
     outputDiv.className = "mb-4 whitespace-pre-wrap";
     this.output.appendChild(outputDiv);
 
+    // Process text to handle clickable elements
+    const processedHTML = this.processClickableElements(text);
+    
+    // Type out character by character
+    let currentHTML = "";
     for (let i = 0; i < text.length; i++) {
-      outputDiv.textContent += text[i];
+      currentHTML += text[i];
+      outputDiv.innerHTML = this.processClickableElements(currentHTML);
       if (speed > 0) {
         await this.sleep(speed);
-        if (i % 10 === 0) this.scrollToBottom();
       }
     }
-    this.scrollToBottom();
+    
+    outputDiv.innerHTML = processedHTML;
+    this.attachClickHandlers(outputDiv);
+  }
+
+  private processClickableElements(text: string): string {
+    // Make commands clickable
+    text = text.replace(/<cmd>(.*?)<\/cmd>/g, '<span class="text-[#00D9FF] hover:text-[#00FF88] cursor-pointer underline" data-cmd="$1">$1</span>');
+    
+    // Make blog posts clickable
+    text = text.replace(/\[(\d+)\]\s+(.+)/g, '<span class="text-[#7B61FF] hover:text-[#00FF88] cursor-pointer" data-blog="$1">[$1] $2</span>');
+    
+    // Make URLs clickable
+    text = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="text-[#00D9FF] hover:text-[#00FF88] underline">$1</a>');
+    
+    return text;
+  }
+
+  private attachClickHandlers(element: HTMLElement) {
+    // Handle command clicks
+    element.querySelectorAll('[data-cmd]').forEach(el => {
+      el.addEventListener('click', () => {
+        const cmd = el.getAttribute('data-cmd');
+        if (cmd) {
+          this.inputEl.value = cmd;
+          this.executeCommand(cmd);
+        }
+      });
+    });
+
+    // Handle blog post clicks
+    element.querySelectorAll('[data-blog]').forEach(el => {
+      el.addEventListener('click', () => {
+        const postNum = el.getAttribute('data-blog');
+        if (postNum) {
+          this.executeCommand(`blog ${postNum}`);
+        }
+      });
+    });
   }
 
   private addCommandToHistory(cmd: string) {
@@ -134,9 +218,9 @@ Type 'help' to see available commands or click a section below.
     const outputDiv = document.createElement("div");
     outputDiv.className = "mb-4 whitespace-pre-wrap";
     outputDiv.style.color = color;
-    outputDiv.textContent = text;
+    outputDiv.innerHTML = this.processClickableElements(text);
     this.output.appendChild(outputDiv);
-    this.scrollToBottom();
+    this.attachClickHandlers(outputDiv);
   }
 
   private async getCommandOutput(cmd: string): Promise<string> {
@@ -172,15 +256,15 @@ Type 'help' to see available commands or click a section below.
     return `
 Available commands:
 
-  experience     Show work experience and career history
-  blog           Read blog posts and thoughts
-  contact        Get in touch
-  social         Social media links
-  about          About this site and technology
-  clear          Clear terminal screen
-  help           Show this help message
+  <cmd>experience</cmd>     Show work experience and career history
+  <cmd>blog</cmd>           Read blog posts and thoughts
+  <cmd>contact</cmd>        Get in touch
+  <cmd>social</cmd>         Social media links
+  <cmd>about</cmd>          About this site and technology
+  <cmd>clear</cmd>          Clear terminal screen
+  <cmd>help</cmd>           Show this help message
 
-Navigation: Click any section above or type a command.
+Type a command and press Enter. Use ↑/↓ for history, Tab for autocomplete.
 `;
   }
 
@@ -256,10 +340,6 @@ GitHub: github.com/d-roak/droak.sh
   private clearTerminal() {
     this.output.innerHTML = "";
     this.showWelcome();
-  }
-
-  private scrollToBottom() {
-    this.container.scrollTop = this.container.scrollHeight;
   }
 
   private sleep(ms: number): Promise<void> {
