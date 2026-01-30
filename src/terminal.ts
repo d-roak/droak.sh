@@ -21,7 +21,7 @@ export class Terminal {
   private init() {
     // Clear container
     this.container.innerHTML = "";
-    this.container.className = "h-screen bg-[#0A0E27] text-[#E8E9ED] font-mono p-6 overflow-hidden";
+    this.container.className = "h-screen bg-[#0A0E27] text-[#E8E9ED] font-mono p-6 overflow-y-auto overflow-x-hidden";
 
     // Create output area
     this.output = document.createElement("div");
@@ -41,7 +41,7 @@ export class Terminal {
 
     const prompt = document.createElement("span");
     prompt.className = "text-[#00D9FF]";
-    prompt.textContent = "[oak@droak.sh";
+    prompt.textContent = "[root@droak.sh";
 
     const path = document.createElement("span");
     path.className = "text-[#8B92B3]";
@@ -54,7 +54,7 @@ export class Terminal {
     // Create actual input element
     this.inputEl = document.createElement("input");
     this.inputEl.type = "text";
-    this.inputEl.className = "bg-transparent border-none outline-none text-[#E8E9ED] ml-2 flex-1 font-mono caret-[#00FF88]";
+    this.inputEl.className = "bg-[#0A0E27] border-none outline-none text-[#E8E9ED] ml-2 flex-1 font-mono caret-[#00FF88]";
     this.inputEl.spellcheck = false;
     this.inputEl.autocomplete = "off";
     
@@ -121,7 +121,7 @@ export class Terminal {
     const welcome = `
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║                    Welcome to oak@droak.sh                    ║
+║                      Welcome to droak.sh                      ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
@@ -147,6 +147,14 @@ Type 'help' to see available commands or click a section below.
     this.isTyping = false;
     this.inputEl.value = "";
     this.inputEl.focus();
+    
+    // Scroll to bottom after command completes
+    this.scrollToBottom();
+  }
+  
+  private scrollToBottom() {
+    // Scroll the container to show the prompt
+    this.container.scrollTop = this.container.scrollHeight;
   }
 
   private async typeOutput(text: string, speed: number = 0.5) {
@@ -164,11 +172,16 @@ Type 'help' to see available commands or click a section below.
       outputDiv.innerHTML = this.processClickableElements(currentHTML);
       if (speed > 0) {
         await this.sleep(speed);
+        // Scroll every 50 characters for smooth following
+        if (i % 50 === 0) {
+          this.scrollToBottom();
+        }
       }
     }
     
     outputDiv.innerHTML = processedHTML;
     this.attachClickHandlers(outputDiv);
+    this.scrollToBottom();
   }
 
   private processClickableElements(text: string): string {
@@ -210,7 +223,7 @@ Type 'help' to see available commands or click a section below.
   private addCommandToHistory(cmd: string) {
     const historyLine = document.createElement("div");
     historyLine.className = "mb-2";
-    historyLine.innerHTML = `<span class="text-[#00D9FF]">[oak@droak.sh ~]$</span> <span class="text-[#E8E9ED]">${cmd}</span>`;
+    historyLine.innerHTML = `<span class="text-[#00D9FF]">[root@droak.sh ~]$</span> <span class="text-[#E8E9ED]">${cmd}</span>`;
     this.output.appendChild(historyLine);
   }
 
@@ -225,6 +238,11 @@ Type 'help' to see available commands or click a section below.
 
   private async getCommandOutput(cmd: string): Promise<string> {
     const command = cmd.toLowerCase().trim();
+
+    // Check for blog post command first
+    if (command.startsWith("blog ") || command.startsWith("thoughts ")) {
+      return await this.getBlogOutput();
+    }
 
     switch (command) {
       case "help":

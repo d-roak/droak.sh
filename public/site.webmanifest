@@ -1,6 +1,6 @@
 {
-  "name": "oak@droak.sh",
-  "short_name": "oak",
+  "name": "droak.sh",
+  "short_name": "droak",
   "icons": [
     {
       "src": "assets/favicon/android-chrome-192x192.png",
