@@ -779,9 +779,8 @@
             return output;
         }
 
-        // ASCII World Map with orange markers
-        function generateMap() {
-            const mapArt = `
+        // ASCII World Map
+        const worldMap = `
                                     . .  . . .    .  .   .   .  .                    
                               .   .  .  . .   .      .  .  . .   .                  
                            .  . .   .    .  .  .   .     .   . .                    
@@ -798,25 +797,6 @@
    . .  . . . . . . . . . . .  . . . . .  . . . . . .  . .                          
  . . . . .  . . . . .  . . . . . . . . . . . . .  . . . .                           
 `;
-            // Add orange markers at specific positions  
-            const markers = [
-                {x: 20, y: 3}, {x: 35, y: 4}, {x: 50, y: 2}, {x: 70, y: 3},
-                {x: 15, y: 6}, {x: 42, y: 7}, {x: 65, y: 6}, {x: 80, y: 5},
-                {x: 25, y: 9}, {x: 55, y: 10}, {x: 75, y: 8}
-            ];
-            
-            let lines = mapArt.split('\n');
-            markers.forEach(marker => {
-                if (lines[marker.y]) {
-                    let line = lines[marker.y];
-                    lines[marker.y] = line.substring(0, marker.x) + 
-                                     '<span style="color: #FF5722;">●</span>' + 
-                                     line.substring(marker.x + 1);
-                }
-            });
-            
-            return lines.join('\n');
-        }
 
         let frame = 0;
         const waveElement = document.getElementById('ascii-wave');
