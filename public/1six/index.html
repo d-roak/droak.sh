@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1SIX - Streaming Infrastructure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+            background: #F5F3EE;
+            color: #1A1A1A;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 243, 238, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF5722;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1A1A1A;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FF5722;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 6rem;
+            position: relative;
+        }
+
+        #ascii-wave {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1;
+            white-space: pre;
+            color: #FF5722;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 6rem 0;
+        }
+
+        .stats-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            gap: 3rem;
+        }
+
+        .stats-title {
+            font-size: 3rem;
+            font-weight: 700;
+            max-width: 400px;
+            line-height: 1.2;
+        }
+
+        .stats-description {
+            max-width: 500px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF5722;
+            margin-bottom: 1rem;
+        }
+
+        .stat-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Image Section */
+        .image-section {
+            margin: 6rem 0;
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+        }
+
+        .image-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            max-width: 700px;
+        }
+
+        /* Adoption Section */
+        .adoption-section {
+            padding: 6rem 0;
+        }
+
+        .adoption-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+            gap: 3rem;
+        }
+
+        .adoption-title {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .adoption-description {
+            max-width: 500px;
+            color: #666;
+        }
+
+        #ascii-map {
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            line-height: 1.1;
+            white-space: pre;
+            color: #FF5722;
+            letter-spacing: 0;
+            margin: 3rem 0;
+            opacity: 0.6;
+        }
+
+        .big-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .big-stat {
+            text-align: left;
+        }
+
+        .big-stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .big-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 6rem 0;
+        }
+
+        .products-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 2rem;
+            background: #FF5722;
+            border-radius: 8px;
+        }
+
+        .product-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .product-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #FF5722;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            align-self: flex-start;
+        }
+
+        .product-link:hover {
+            background: #E64A19;
+        }
+
+        /* Footer */
+        footer {
+            padding: 6rem 0 3rem;
+            border-top: 1px solid #DDD;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-left {
+            max-width: 400px;
+        }
+
+        .footer-tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input {
+            padding: 0.8rem;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .submit-btn {
+            padding: 0.8rem 1.5rem;
+            background: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            align-self: flex-start;
+        }
+
+        .submit-btn:hover {
+            background: #E64A19;
+        }
+
+        .footer-logo {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #FF5722;
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .stats-header,
+            .adoption-header,
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .stats-title,
+            .adoption-title {
+                font-size: 2rem;
+            }
+
+            .image-text {
+                font-size: 1.5rem;
+            }
+
+            .big-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+
+            #ascii-wave {
+                font-size: 6px;
+            }
+
+            #ascii-map {
+                font-size: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">1SIX</div>
+            <nav>
+                <a href="#about">ABOUT</a>
+                <a href="#products">PRODUCTS</a>
+                <a href="#contact">SPEAK</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <pre id="ascii-wave"></pre>
+        <div class="hero-text">
+            The current infrastructure isn't built for a low-latency era of global scale. So, streaming infrastructure needs a new vision and rewrite altogether.
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="stats-section" id="about">
+            <div class="stats-header">
+                <h2 class="stats-title">Crossed the first 16%.</h2>
+                <p class="stats-description">
+                    The majority of streamers don't own a studio. A new market has to build what it takes to make them scalable in the long term for guaranteed ROI when users purchase from our always evolving marketplace.
+                </p>
+            </div>
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-number">01 Connect</div>
+                    <div class="stat-title">Infrastructure at-scale for over 10 mins sustained with no global throttle layer.</div>
+                    <div class="stat-description">
+                        We enable unthrottled infrastructure. Developing a comprehensive framework so creators don't shut down more online viewers.
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">02 Stream</div>
+                    <div class="stat-title">We process out one-time subscriptions. The sidebar on available for your business.</div>
+                    <div class="stat-description">
+                        We enable unthrottled infrastructure. Developing a comprehensive framework so creators don't shut down more online viewers.
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">03 Playback</div>
+                    <div class="stat-title">Secure and upload content that is fair APIs. Managing everything from infrastructure to real-time RTCM media source analytics.</div>
+                    <div class="stat-description">
+                        We enable unthrottled infrastructure. Developing a comprehensive framework so creators don't shut down more online viewers.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1600&h=900&fit=crop" alt="Desert landscape">
+            <div class="image-overlay">
+                <div class="image-text">1SIX seeks to push the industry past that line.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="adoption-section">
+            <div class="adoption-header">
+                <h2 class="adoption-title">Adoption comes first.</h2>
+                <p class="adoption-description">
+                    When we think of digital infrastructure, it's about building future-ready, user-centric platforms and infrastructure that lets their tokens scale instantly. For a market that's shifting towards scale and ease.
+                </p>
+            </div>
+
+            <pre id="ascii-map"></pre>
+
+            <div class="big-stats">
+                <div class="big-stat">
+                    <div class="big-stat-number">850K +</div>
+                    <div class="big-stat-label">Active Users</div>
+                </div>
+                <div class="big-stat">
+                    <div class="big-stat-number">$ 4.2B</div>
+                    <div class="big-stat-label">Market Volume</div>
+                </div>
+                <div class="big-stat">
+                    <div class="big-stat-number">&lt; 100ms</div>
+                    <div class="big-stat-label">Average Latency</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section" id="products">
+            <div class="products-title">PRODUCTS</div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon"></div>
+                    <h3 class="product-name">Nozzle TV</h3>
+                    <p class="product-description">
+                        Ultra-low latency streaming platform for the modern creator. Scale globally with unthrottled infrastructure.
+                    </p>
+                    <a href="#" class="product-link">LEARN MORE</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"></div>
+                    <h3 class="product-name">Nozzle Trade</h3>
+                    <p class="product-description">
+                        Infrastructure-as-code marketplace with out-of-the-box creators. Manage, discover, iterate. Hands-free infrastructure.
+                    </p>
+                    <a href="#" class="product-link">LEARN MORE</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"></div>
+                    <h3 class="product-name">Nozzle Rollup</h3>
+                    <p class="product-description">
+                        L2 protocol-native infrastructure for the next billion. Powering scalable, fast native's cloud for tokenized assets.
+                    </p>
+                    <a href="#" class="product-link">LEARN MORE</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-tagline">
+                        Embracing fear of thought immediately<br>
+                        Embracing fear of thought immediately<br>
+                        Embracing fear of thought immediately
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Company" required>
+                        <button type="submit" class="submit-btn">SEND</button>
+                    </form>
+                </div>
+                <div class="footer-logo">16</div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 1SIX Tech. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ASCII Wave Animation
+        function generateWave(frame) {
+            const width = 100;
+            const height = 20;
+            const chars = ['/', '|', '\\', '-', '.', ' '];
+            let output = '';
+            
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const wave = Math.sin((x / 8) + (frame / 10)) * 5 + 
+                                Math.cos((x / 12) + (frame / 8)) * 3;
+                    
+                    // Add shadow offset
+                    const shadow = Math.sin((x / 10) + (frame / 12) + 0.5) * 4;
+                    
+                    if (Math.abs(y - (height / 2) - wave) < 1.5) {
+                        output += chars[Math.floor(Math.random() * 3)];
+                    } else if (Math.abs(y - (height / 2) - shadow) < 0.8) {
+                        output += chars[4]; // dot for shadow
+                    } else {
+                        output += ' ';
+                    }
+                }
+                output += '\n';
+            }
+            return output;
+        }
+
+        // ASCII World Map
+        const worldMap = `
+                                    . .  . . .    .  .   .   .  .                    
+                              .   .  .  . .   .      .  .  . .   .                  
+                           .  . .   .    .  .  .   .     .   . .                    
+                        .  .     .  .  .    .   . .   .  . .   . .                  
+                      .   .  .  .    . .  .   .    . .     .  .   .                 
+                   . .  .   .  . .  .   .  .  . .    .  . .   .  .                  
+                 .   . .  .  .   .  . .  .  .   .  .   .  .  . .                    
+               .  . .  . . .  . .  .  . . .  .  .  . . .  . .  .                    
+             . . .  . .  . .   . . . . . .  . .  . .  . . .  . .                    
+           . .  . .  . . .  . . . . .  . . .  . . .  . .  . . .                     
+         . . . . . . .  . . .  . .  . . .  . . .  . . . . .  .                      
+       . .  . . .  . . . . . . . . . .  . . .  . . . .  . . .                       
+     . . . . .  . . .  . .  . . .  . . . . . . .  . . . . .                         
+   . .  . . . . . . . . . . .  . . . . .  . . . . . .  . .                          
+ . . . . .  . . . . .  . . . . . . . . . . . . .  . . . .                           
+`;
+
+        let frame = 0;
+        const waveElement = document.getElementById('ascii-wave');
+        const mapElement = document.getElementById('ascii-map');
+        
+        mapElement.textContent = worldMap;
+
+        function animate() {
+            waveElement.textContent = generateWave(frame);
+            frame += 0.3;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
