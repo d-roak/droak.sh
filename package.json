@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@droak/wterm": "^0.2.0",
+    "@droak/wterm": "^0.2.2",
     "marked": "^17.0.1",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"

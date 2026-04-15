@@ -10,7 +10,7 @@ export function Login() {
       <Box title="login" double>
         <Input label="username" value={username} onChange={setUsername} placeholder="visitor" />
         <br />
-        <Input label="password" value={password} onChange={setPassword} placeholder="********" />
+        <Input label="password" value={password} onChange={setPassword} placeholder="********" type="password" />
         <br />
         <Button label="sign in" onSelect={() => {}} />
       </Box>

@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@droak/wterm':
-        specifier: ^0.2.0
-        version: 0.2.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.2.2
+        version: 0.2.2(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       marked:
         specifier: ^17.0.1
         version: 17.0.6
@@ -122,8 +122,8 @@ packages:
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
 
-  '@droak/wterm@0.2.1':
-    resolution: {integrity: sha512-a6tDvl/X9FEtuiOZpudtcmrl5i3RZNh+6o46dlhlxJP67IqcfRP4kI472gNODD51zfC7OZcioiGM10buiFCYqg==}
+  '@droak/wterm@0.2.2':
+    resolution: {integrity: sha512-Jq2H3/61NghRTIDa60IoXK+OltjojWA5wr/0Wxn1hrs8Yqxrz7q3OeQvd5q2at93FjvGNUAbfiUXWj7w5fKwwA==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
@@ -985,7 +985,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@droak/wterm@0.2.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@droak/wterm@0.2.2(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       cmdk: 1.1.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
