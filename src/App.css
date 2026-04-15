@@ -1,0 +1,228 @@
+html,
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.app-shell {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.app-shell > div:first-child {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+}
+
+/* Content area between tabs and statusbar */
+.app-shell .tui-tabs + div {
+	padding: 2rem 3rem !important;
+	flex: 1;
+	overflow-y: auto;
+	min-height: 0;
+}
+
+.app-shell .tui-statusbar {
+	flex-shrink: 0;
+}
+
+/* Push last tab (Login) to the right */
+.tui-tabs .tui-tab:last-child {
+	margin-left: auto;
+}
+
+/* Login container */
+.login-container {
+	max-width: 40ch;
+}
+
+/* Home header: banner left, contact/socials right */
+.home-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 1.5rem;
+}
+
+.ascii-banner {
+	color: var(--tui-accent);
+	font-size: 0.75rem;
+	line-height: 1.2;
+	margin: 0;
+	background: none !important;
+	border: none !important;
+	padding: 0;
+}
+
+.home-header-right {
+	display: flex;
+	gap: 3ch;
+	align-self: flex-end;
+}
+
+.header-col {
+	display: flex;
+	flex-direction: column;
+	gap: 0.125rem;
+}
+
+.header-line a {
+	color: var(--tui-fg);
+	text-decoration: none;
+}
+
+.header-line a:hover {
+	color: var(--tui-accent);
+}
+
+/* Home layout */
+.home-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	align-items: stretch;
+}
+
+.home-left,
+.home-right {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.home-left .tui-box {
+	flex: 1;
+}
+
+/* Metrics */
+.metrics-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.metric {
+	display: flex;
+	flex-direction: column;
+}
+
+.metric-value {
+	color: var(--tui-accent);
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 1;
+}
+
+/* Project items */
+.project-item {
+	text-decoration: none;
+	color: var(--tui-fg);
+	display: block;
+}
+
+.project-item:hover,
+.project-item:focus-visible {
+	color: var(--tui-accent);
+}
+
+/* Section spacing */
+.section-stack {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 0.5rem 0;
+}
+
+.section-stack .tui-box {
+	margin: 0.25rem 0;
+}
+
+/* Muted text */
+.muted {
+	color: var(--tui-muted);
+}
+
+/* Lists inside boxes */
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul li::before {
+	content: "> ";
+	color: var(--tui-accent);
+}
+
+/* Social links */
+.link-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.social-link {
+	text-decoration: none;
+	color: var(--tui-fg);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+	color: var(--tui-accent);
+}
+
+/* Blog layout */
+.blog-layout {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 1ch;
+	height: 100%;
+}
+
+.blog-nav {
+	overflow-y: auto;
+}
+
+.blog-reader {
+	overflow-y: auto;
+}
+
+/* Blog content (rendered markdown) */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+	color: var(--tui-accent);
+	margin: 0.5rem 0;
+}
+
+.blog-content p {
+	margin: 0.5rem 0;
+}
+
+.blog-content a {
+	color: var(--tui-sapphire, var(--tui-accent));
+}
+
+.blog-content code {
+	background: var(--tui-surface0);
+	padding: 0.1em 0.3em;
+}
+
+.blog-content pre {
+	background: var(--tui-surface0);
+	padding: 0.5rem;
+	overflow-x: auto;
+	border: 1px solid var(--tui-border);
+}
+
+.blog-content pre code {
+	background: transparent;
+	padding: 0;
+}
