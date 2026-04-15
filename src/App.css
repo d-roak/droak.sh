@@ -11,6 +11,7 @@ body,
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+	height: 100dvh;
 	overflow: hidden;
 }
 
@@ -21,6 +22,13 @@ body,
 	min-height: 0;
 }
 
+/* Tabs bar */
+.app-shell .tui-tabs {
+	flex-shrink: 0;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
 /* Content area between tabs and statusbar */
 .app-shell .tui-tabs + div {
 	padding: 2rem 3rem !important;
@@ -29,6 +37,7 @@ body,
 	min-height: 0;
 }
 
+/* Status bar */
 .app-shell .tui-statusbar {
 	flex-shrink: 0;
 }
@@ -225,4 +234,75 @@ ul li::before {
 .blog-content pre code {
 	background: transparent;
 	padding: 0;
+}
+
+/* ═══════════════════════════════════════════
+   Mobile: < 768px
+   ═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+	/* Reduce content padding */
+	.app-shell .tui-tabs + div {
+		padding: 1rem 1rem !important;
+	}
+
+	/* Tabs: allow horizontal scroll, no wrapping */
+	.app-shell .tui-tabs {
+		gap: 0.5ch;
+	}
+
+	/* Don't push login right on mobile — let tabs flow naturally */
+	.tui-tabs .tui-tab:last-child {
+		margin-left: 0;
+	}
+
+	/* Home header: stack vertically */
+	.home-header {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.home-header-right {
+		align-self: flex-start;
+		gap: 2ch;
+	}
+
+	/* ASCII banner: scale down */
+	.ascii-banner {
+		font-size: 0.5rem;
+	}
+
+	/* Home grid: single column */
+	.home-grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* Blog: stack vertically */
+	.blog-layout {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr;
+	}
+}
+
+/* ═══════════════════════════════════════════
+   Small mobile: < 480px
+   ═══════════════════════════════════════════ */
+@media (max-width: 479px) {
+	.app-shell .tui-tabs + div {
+		padding: 0.75rem 0.75rem !important;
+	}
+
+	/* Header contact: stack columns vertically */
+	.home-header-right {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	/* Metrics: single column */
+	.metrics-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.metric-value {
+		font-size: 1.25rem;
+	}
 }
