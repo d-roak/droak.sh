@@ -8,7 +8,11 @@ on:
       - index.html
       - public/**
       - src/**
+      - data/**
       - package.json
+      - pnpm-lock.yaml
+      - vite.config.ts
+      - tsconfig.json
 
 permissions:
   pages: write
