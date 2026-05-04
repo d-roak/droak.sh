@@ -4,13 +4,6 @@ date: 2026-05-04
 tags: agents, workflow, knowledge base
 ---
 
----
-
-**Tags:** `agents` · `workflow` · `knowledge base`  
-**Published:** 04 may 2026
-
----
-
 The first thing most people do (or should) with Claude Code is write a `CLAUDE.md`. Then they add more to it. Then more. Six months later it's 200 lines of mixed stuff: git conventions, architecture decisions, personal preferences. Every session loads all of it regardless of what the task actually needs.
 
 You're burning context on your commit style guide when all Claude needs to do is fix a typo. That's the problem. It's not catastrophic, it's just wasting tokens.
