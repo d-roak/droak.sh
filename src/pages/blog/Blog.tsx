@@ -1,12 +1,16 @@
-import { useState } from "react";
 import { Box, List } from "@droak/wterm";
 import { marked } from "marked";
 import { blogPosts } from "./loader";
 
-export function Blog() {
-	const [selectedId, setSelectedId] = useState<string | null>(
-		blogPosts.length > 0 ? blogPosts[0].id : null,
-	);
+interface BlogProps {
+	postSlug: string | null;
+	onPostChange: (slug: string | null) => void;
+}
+
+export function Blog({ postSlug, onPostChange }: BlogProps) {
+	const fallbackId = blogPosts[0]?.id ?? null;
+	const selectedId =
+		postSlug && blogPosts.some((p) => p.id === postSlug) ? postSlug : fallbackId;
 	const selected = blogPosts.find((p) => p.id === selectedId);
 
 	const items = blogPosts.map((p) => ({
@@ -20,7 +24,7 @@ export function Blog() {
 				<List
 					items={items}
 					selectedId={selectedId ?? undefined}
-					onSelect={setSelectedId}
+					onSelect={onPostChange}
 					group="Writings"
 				/>
 			</Box>
