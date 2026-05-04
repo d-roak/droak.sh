@@ -26,6 +26,7 @@ body,
 .app-shell .tui-tabs {
 	flex-shrink: 0;
 	overflow-x: auto;
+	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -35,6 +36,52 @@ body,
 	flex: 1;
 	overflow-y: auto;
 	min-height: 0;
+}
+
+/* Themed scrollbars on scrollable content surfaces */
+.app-shell .tui-tabs,
+.app-shell .tui-tabs + div,
+.blog-nav,
+.blog-reader {
+	scrollbar-width: thin;
+	scrollbar-color: var(--tui-surface2) transparent;
+}
+
+.app-shell .tui-tabs::-webkit-scrollbar,
+.app-shell .tui-tabs + div::-webkit-scrollbar,
+.blog-nav::-webkit-scrollbar,
+.blog-reader::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.app-shell .tui-tabs::-webkit-scrollbar-track,
+.app-shell .tui-tabs + div::-webkit-scrollbar-track,
+.blog-nav::-webkit-scrollbar-track,
+.blog-reader::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.app-shell .tui-tabs::-webkit-scrollbar-thumb,
+.app-shell .tui-tabs + div::-webkit-scrollbar-thumb,
+.blog-nav::-webkit-scrollbar-thumb,
+.blog-reader::-webkit-scrollbar-thumb {
+	background: var(--tui-surface2);
+	border: 1px solid var(--tui-border);
+}
+
+.app-shell .tui-tabs::-webkit-scrollbar-thumb:hover,
+.app-shell .tui-tabs + div::-webkit-scrollbar-thumb:hover,
+.blog-nav::-webkit-scrollbar-thumb:hover,
+.blog-reader::-webkit-scrollbar-thumb:hover {
+	background: var(--tui-accent);
+}
+
+.app-shell .tui-tabs::-webkit-scrollbar-corner,
+.app-shell .tui-tabs + div::-webkit-scrollbar-corner,
+.blog-nav::-webkit-scrollbar-corner,
+.blog-reader::-webkit-scrollbar-corner {
+	background: transparent;
 }
 
 /* Status bar */
