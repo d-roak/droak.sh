@@ -3,120 +3,118 @@
     "company": "1six Technologies",
     "role": "Co-Founder & Advisor",
     "location": "Seoul, South Korea",
-    "period": "Jun. 2025 - Present",
+    "period": "2025 - Present",
     "website": "https://1six.tech",
     "description": [
-      "Raised initial funding and established strategic partnerships.",
-      "Built a world-class team of engineers and researchers to bring usability for blockchain technologies.",
-      "Development of <a href='https://live.nevada.app/'>Nevada TV</a> for content distribution related with crypto/finance.",
-      "Development of <a href='https://trade.nevada.app/'>Nevada Trade</a>, a perpdex built on top of HyperLiquid Builder Codes targeting South Korea market."
+      "Secured $2.5M seed funding from early investors.",
+      "Set company strategy and led a 7-person technical team, building product hands-on.",
+      "Built and shipped <a href='https://trade.nevada.app/'>Nevada Trade</a>, a perpetuals DEX with stablecoin-settled trading integrated on HyperLiquid's API, tailored to the APAC market."
     ]
   },
   {
     "company": "TripleOak",
     "role": "Co-Founder & Managing Partner",
     "location": "Portugal",
-    "period": "Sep. 2019 - Present",
+    "period": "2019 - Present",
     "website": "https://tripleoak.vc",
     "description": [
       "Portuguese familiar company focused on holding and small check investing on businesses.",
-      "Previously acted as consulting and advisory for small/mid sized companies in Portugal."
+      "Made 10+ investments and advised 3 companies."
     ]
   },
   {
     "company": "Topology",
     "role": "CTO",
     "location": "Remote",
-    "period": "May. 2024 - Apr. 2025",
+    "period": "2024 - 2025",
     "description": [
-      "VC-backed global startup focused on the development of on-chain/distributed realities and gaming.",
-      "Helped wind down the company after founders misalignment, while keeping the team together and helping them find new opportunities.",
-      "Responsible for institutional partnerships, technical strategy, and the development of the product.",
-      "Leading a team of 10+ world-level engineers to develop <a href='https://www.youtube.com/watch?v=kFmDiijLgRU'>distributed programs</a> based of CRDTs."
+      "VC-backed startup ($5M seed) building on-chain, distributed systems.",
+      "Owned technical strategy and institutional partnerships, interfacing directly with external stakeholders.",
+      "Led 10+ engineers and built hands-on <a href='https://www.youtube.com/watch?v=kFmDiijLgRU'>distributed programs</a> on CRDTs."
     ]
   },
   {
     "company": "LambdaClass",
     "role": "Head of Exploration Team",
     "location": "Remote",
-    "period": "Jul. 2023 - Jan. 2024",
+    "period": "2023 - 2024",
     "website": "https://lambdaclass.com",
     "description": [
-      "Company focused on building critical software systems across: blockchain infrastructure, AI, finance, aerospace, automotive, and engineering.",
-      "Leading the exploration team responsible for identifying and validating new technologies, as well as building prototypes to validate them.",
-      "Core contributor on open source projects such as <a href='https://github.com/AbdelStark/madara'>Madara</a>, a distributed sequencer for building app chains.",
-      "SME for distributed systems, infrastructure, and blockchain technologies."
+      "Software firm building critical systems across blockchain, AI, finance, and more.",
+      "Ran developer relations, explaining complex systems to technical and non-technical audiences.",
+      "Discovered, evaluated, and integrated emerging technologies, building prototypes and helping teams adopt them.",
+      "Supported 4 internal projects needing EVM and distributed-systems expertise, including <a href='https://github.com/AbdelStark/madara'>Madara</a> (a distributed sequencer), with 100+ open-source contributions."
     ]
   },
   {
     "company": "MARMMO",
     "role": "Delegated CIO",
-    "location": "Portugal",
-    "period": "Feb. 2021 - Jun. 2023",
+    "location": "Setúbal, Portugal",
+    "period": "2021 - 2023",
     "website": "https://marmmo.pt",
     "description": [
-      "Portuguese company focused on the manufacturing of stone products.",
-      "Designed and implemented the IT infrastructure of the company, including the migration to cloud services and the implementation of security measures.",
-      "Development of internal tools to automate the management of the IT infrastructure and improve the efficiency of the operations."
+      "Built the IT infrastructure from scratch for this stone-products manufacturer (cloud migration and security).",
+      "Implemented internal tools and integrations to automate operations.",
+      "Reduced stock-counting time by 86%."
     ]
   },
   {
     "company": "Accenture",
     "role": "Security Associate",
     "location": "Lisbon, Portugal",
-    "period": "Nov. 2020 - Jul. 2021",
+    "period": "2020 - 2021",
     "website": "https://accenture.com",
     "description": [
-      "Global consulting company with a strong focus on technology.",
-      "Maintenance of instances of SailPoint IdentityIQ for tens of thousands of users in multiple banks.",
-      "Static and Dynamic application security testing, with manual testing of detected vulnerabilities for a major utilities company."
+      "Deployed and maintained SailPoint IdentityIQ integrations for 20,000+ users across multiple banks, troubleshooting issues for client teams.",
+      "Performed application security testing (static, dynamic, manual) for large enterprises."
     ]
   },
   {
     "company": "Solactive",
     "role": "System Administrator",
     "location": "Dresden, Germany",
-    "period": "Jan. 2019 - Mar. 2019",
+    "period": "2019",
     "website": "https://solactive.com",
     "description": [
-      "German company focused on the development of financial indices.",
-      "Supporting the maintenance of the infrastructure architecture.",
-      "Improving the automation process for the management of the infrastructure."
+      "German financial-index provider.",
+      "Supported on-site network infrastructure and operations at the Dresden office.",
+      "Kept 2 servers running at 99.99% uptime for around 20 ML/software engineers."
     ]
   },
   {
     "company": "FCT | FCCN",
     "role": "Cybersecurity Intern",
     "location": "Lisboa, Portugal",
-    "period": "Nov. 2017 - Mar. 2018",
+    "period": "2017 - 2018",
     "website": "https://www.fccn.pt",
     "description": [
       "Portuguese public institution responsible for the management of the educational networks in Portugal.",
       "Worked with the security incidents response team (RCTS CERT) responsible for overseeing the educational networks in Portugal.",
-      "Restructuring the Intrusion Detection System in the data centers operated by the FCCN unit."
-    ]
-  },
-  {
-    "company": "NOVA-LINCS",
-    "role": "Research Assistant",
-    "location": "Caparica, Portugal",
-    "period": "Jul. 2015 - Jul. 2017",
-    "website": "https://nova-lincs.di.fct.unl.pt",
-    "description": [
-      "NOVA University Computer Science research unit.",
-      "Development of a DHT Protocol to mitigate churn problems.",
-      "Research on generic P2P protocols for efficient message dissemination in large scale networks."
+      "Bootstrapped the Intrusion Detection System in the main internal network, successfully detecting an on-going attack."
     ]
   },
   {
     "company": "BetaCode",
     "role": "Software Developer",
     "location": "Caparica, Portugal",
-    "period": "Feb. 2017 - Jun. 2017",
+    "period": "2017",
     "website": "https://www.betacode.tech",
     "description": [
       "Portuguese software house focused on web development.",
-      "Development of enterprise websites and webapps."
+      "Delivered 3 enterprise webapps."
+    ]
+  },
+  {
+    "company": "NOVA-LINCS",
+    "role": "Research Assistant",
+    "location": "Caparica, Portugal",
+    "period": "2015 - 2017",
+    "website": "https://nova-lincs.di.fct.unl.pt",
+    "description": [
+      "NOVA University Computer Science research unit.",
+      "Development of a DHT Protocol to mitigate churn problems, evaluated on 100/1,000/10,000-node simulations and 10+ real nodes.",
+      "Research on generic P2P protocols for efficient message dissemination in large scale networks.",
+      "Submitted one short-format paper to a local conference."
     ]
   }
 ]

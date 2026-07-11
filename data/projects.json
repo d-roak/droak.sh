@@ -3,5 +3,20 @@
     "name": "wterm",
     "description": "Minimal web component library that replicates classic terminal UI (TUI) components",
     "href": "https://github.com/d-roak/wterm"
+  },
+  {
+    "name": "madara",
+    "description": "Modular stack to build Starknet appchains and validity rollups",
+    "href": "https://github.com/AbdelStark/madara"
+  },
+  {
+    "name": "mojave",
+    "description": "EVM-compatible Bitcoin L2 execution layer",
+    "href": "https://github.com/1sixtech/mojave"
+  },
+  {
+    "name": "ts-drp (fork)",
+    "description": "TypeScript implementation of Distributed Real-time Programs (DRP)",
+    "href": "https://github.com/d-roak/ts-drp"
   }
 ]

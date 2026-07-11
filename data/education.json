@@ -1,0 +1,34 @@
+[
+  {
+    "school": "NOVA University Lisbon",
+    "degree": "PhD, Computer Science (Dropout)",
+    "location": "Lisbon, Portugal",
+    "period": "2022 - 2023",
+    "website": "https://www.unl.pt",
+    "description": [
+      "Protocol Labs PhD Fellowship.",
+      "Research in distributed systems and decentralized protocols at NOVA-LINCS, advised by Prof. João Leitão."
+    ]
+  },
+  {
+    "school": "NOVA University Lisbon",
+    "degree": "MSc, Computer Science & Engineering",
+    "location": "Lisbon, Portugal",
+    "period": "2017 - 2020",
+    "website": "https://www.unl.pt",
+    "description": [
+      "Thesis: <em>A Systems Approach to Minimize Wasted Work in Blockchains</em>.",
+      "Proposed a p2p communication approach for blockchain networks that reduced latency by ~34% and cut uncle blocks in proof-of-work chains (Bitcoin and Ethereum at the time) by ~77%."
+    ]
+  },
+  {
+    "school": "NOVA University Lisbon",
+    "degree": "BSc, Computer Science & Engineering",
+    "location": "Lisbon, Portugal",
+    "period": "2014 - 2017",
+    "website": "https://www.unl.pt",
+    "description": [
+      "Research assistant at the computer science lab."
+    ]
+  }
+]

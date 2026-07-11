@@ -70,7 +70,7 @@ export function Home() {
 						</div>
 					</Box>
 
-					<Box title="current projects">
+					<Box title="highlighted projects">
 						<div className="link-list">
 							{projects.map((p) => (
 								<ProjectLink
