@@ -47,8 +47,6 @@ export function Home() {
 			<div className="home-grid">
 				<div className="home-left">
 					<Box title="about">
-						<p>{about.headline}</p>
-						<br />
 						<p dangerouslySetInnerHTML={{ __html: about.bio }} />
 						<br />
 						<p>

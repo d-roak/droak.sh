@@ -1,6 +1,5 @@
 {
-  "headline": "Builder. Perpetually in the middle of something interesting. With interest in distributed systems, blockchain, finance, and agents.",
-  "bio": "Portuguese based in South Korea. Worked in the intersection of cybersecurity, distributed systems, and crypto, usually at the frontier.<br/>Currently I'm improving my development workflows with agents, while pursuing other interests.",
+  "bio": "Portuguese in Seoul. Eleven years of engineering across cybersecurity, distributed systems, and crypto; two as a CTO in VC-backed startups. I like hard systems and the strange places where they meet money.<br/><br/>Now I spend my days on two things:<br/><a href='https://nieusync.com' target='_blank'>Nieusync</a> — consulting that automates processes and unblocks ops.<br/><a href='https://ziku.io' target='_blank'>Ziku</a> — software that cuts costs and scales operations.<br/><br/>In between, I’m rebuilding how I work around agents.",
   "contact": {
     "email": "me@droak.sh",
     "web": "droak.sh"
