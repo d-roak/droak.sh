@@ -12,6 +12,18 @@
     ]
   },
   {
+    "company": "1six Technologies",
+    "role": "Co-Founder & CTO -> Advisor",
+    "location": "Seoul, South Korea",
+    "period": "2025 - Present",
+    "website": "https://1six.tech",
+    "description": [
+      "Secured $2.5M seed funding from early investors.",
+      "Set company strategy and led a 7-person technical team, building product hands-on.",
+      "Built and shipped <a href='https://trade.nevada.app/'>Nevada Trade</a>, a perpetuals DEX with stablecoin-settled trading integrated on HyperLiquid's API, tailored to the APAC market."
+    ]
+  },
+  {
     "company": "Ziku",
     "role": "Owner",
     "location": "Remote",
@@ -24,20 +36,8 @@
     ]
   },
   {
-    "company": "1six Technologies",
-    "role": "Co-Founder & Advisor",
-    "location": "Seoul, South Korea",
-    "period": "2025 - Present",
-    "website": "https://1six.tech",
-    "description": [
-      "Secured $2.5M seed funding from early investors.",
-      "Set company strategy and led a 7-person technical team, building product hands-on.",
-      "Built and shipped <a href='https://trade.nevada.app/'>Nevada Trade</a>, a perpetuals DEX with stablecoin-settled trading integrated on HyperLiquid's API, tailored to the APAC market."
-    ]
-  },
-  {
     "company": "TripleOak",
-    "role": "Co-Founder & Managing Partner",
+    "role": "Partner",
     "location": "Portugal",
     "period": "2019 - Present",
     "website": "https://tripleoak.vc",
@@ -48,7 +48,7 @@
   },
   {
     "company": "Topology",
-    "role": "CTO",
+    "role": "Research Engineer -> CTO",
     "location": "Remote",
     "period": "2024 - 2025",
     "description": [
@@ -59,7 +59,7 @@
   },
   {
     "company": "LambdaClass",
-    "role": "Head of Exploration Team",
+    "role": "Software Engineer -> Head of Exploration Team",
     "location": "Remote",
     "period": "2023 - 2024",
     "website": "https://lambdaclass.com",
@@ -72,7 +72,7 @@
   },
   {
     "company": "MARMMO",
-    "role": "Delegated CIO",
+    "role": "Software Engineer -> Delegated CIO",
     "location": "Setúbal, Portugal",
     "period": "2021 - 2023",
     "website": "https://marmmo.pt",
