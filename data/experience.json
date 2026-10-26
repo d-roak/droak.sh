@@ -1,5 +1,29 @@
 [
   {
+    "company": "Nieusync",
+    "role": "Advisor",
+    "location": "Portugal",
+    "period": "2025 - Present",
+    "website": "https://nieusync.com",
+    "description": [
+      "Multidisciplinary consulting firm serving Portuguese SMEs across digital, legal, strategy, operations, and fiscal practices.",
+      "Help operations and automation teams design and build AI-integrated process automation systems in clients’ critical business paths.",
+      "Built the internal stack hands-on, including a GDPR-compliant, matter-scoped client portal and LLM pipelines for legal document automation."
+    ]
+  },
+  {
+    "company": "Ziku",
+    "role": "Owner",
+    "location": "Remote",
+    "period": "2021 - Present",
+    "website": "https://ziku.io",
+    "description": [
+      "Builds AI, distributed, and financial systems for operations, workflows, and relationships in financial products.",
+      "Previously operated as an engineering house, delivering contract work on core blockchain infrastructure projects in the Ethereum ecosystem.",
+      "Contributed to open-source projects with a combined 10k+ GitHub stars."
+    ]
+  },
+  {
     "company": "1six Technologies",
     "role": "Co-Founder & Advisor",
     "location": "Seoul, South Korea",
